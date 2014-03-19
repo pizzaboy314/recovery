@@ -1,50 +1,14 @@
 fileFormatVersion: 2
-guid: 2fd5397e6be882f4280fb3c8784748b0
+guid: c8e883ebd2f748d439df4e5286c023b3
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: _1164
-    100002: _11641
-    100004: _11642
-    100006: _11643
-    100008: _11644
-    100010: _11645
-    100012: _11646
-    100014: _11647
-    100016: //RootNode
-    400000: _1164
-    400002: _11641
-    400004: _11642
-    400006: _11643
-    400008: _11644
-    400010: _11645
-    400012: _11646
-    400014: _11647
-    400016: //RootNode
-    2300000: _1164
-    2300002: _11641
-    2300004: _11642
-    2300006: _11643
-    2300008: _11644
-    2300010: _11645
-    2300012: _11646
-    2300014: _11647
-    3300000: _1164
-    3300002: _11641
-    3300004: _11642
-    3300006: _11643
-    3300008: _11644
-    3300010: _11645
-    3300012: _11646
-    3300014: _11647
-    4300000: _11642
-    4300002: _11641
-    4300004: _11647
-    4300006: _11643
-    4300008: _1164
-    4300010: _11645
-    4300012: _11646
-    4300014: _11644
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
+    6400000: //RootNode
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -65,12 +29,12 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: .25
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1

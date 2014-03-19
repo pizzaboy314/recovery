@@ -1,30 +1,40 @@
 fileFormatVersion: 2
-guid: bb570ab5d15cfe44cbefdadfb5bc58c1
+guid: 69a1e3785f5096046a3fdde80be0565c
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: group
-    100002: group1
-    100004: //RootNode
-    100006: pasted__group3
-    100008: pasted__pasted__group
-    100010: pCube1
-    100012: pCube2
-    400000: group
-    400002: group1
-    400004: //RootNode
-    400006: pasted__group3
-    400008: pasted__pasted__group
-    400010: pCube1
-    400012: pCube2
-    2300000: pCube1
-    2300002: pCube2
-    3300000: pCube1
-    3300002: pCube2
-    4300000: pCube2
-    4300002: pCube1
-    6400000: pCube1
-    6400002: pCube2
+    100000: //RootNode
+    100002: SketchUp
+    100004: SketchUp_001
+    100006: SketchUp_002
+    100008: SketchUp_003
+    100010: SketchUp_004
+    400000: //RootNode
+    400002: SketchUp
+    400004: SketchUp_001
+    400006: SketchUp_002
+    400008: SketchUp_003
+    400010: SketchUp_004
+    2300000: SketchUp
+    2300002: SketchUp_001
+    2300004: SketchUp_002
+    2300006: SketchUp_003
+    2300008: SketchUp_004
+    3300000: SketchUp
+    3300002: SketchUp_001
+    3300004: SketchUp_002
+    3300006: SketchUp_003
+    3300008: SketchUp_004
+    4300000: SketchUp_004
+    4300002: SketchUp_003
+    4300004: SketchUp_002
+    4300006: SketchUp_001
+    4300008: SketchUp
+    6400000: SketchUp
+    6400002: SketchUp_001
+    6400004: SketchUp_002
+    6400006: SketchUp_003
+    6400008: SketchUp_004
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -45,7 +55,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .300000012
+    globalScale: .5
     meshCompression: 0
     addColliders: 1
     importBlendShapes: 1
