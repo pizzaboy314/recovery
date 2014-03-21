@@ -1,0 +1,27 @@
+Initialize engine version: 4.3.3f1 (c8ca9b6b9936)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nv4_disp.dll 6.14.12.5896]
+    Renderer: NVIDIA GeForce 8400M GS          
+    Vendor:   NVIDIA
+    VRAM:     512 MB (via registry)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+- Completed reload, in  0.119 seconds
+desktop: 1280x800 60Hz; virtual: 1280x800 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+UnloadTime: 0.450336 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1332.
+Total: 7.061791 ms (FindLiveObjects: 0.170412 ms CreateObjectMapping: 0.234666 ms MarkObjects: 0.711263 ms  DeleteObjects: 0.024304 ms)
+
