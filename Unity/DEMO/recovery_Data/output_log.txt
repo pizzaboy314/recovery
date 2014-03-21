@@ -15,13 +15,13 @@ Platform assembly: C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Da
 Loading C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading C:\Bryan's_Data\Media\Unity\CS426\main\Unity\DEMO\recovery_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.119 seconds
+- Completed reload, in  0.115 seconds
 desktop: 1280x800 60Hz; virtual: 1280x800 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-UnloadTime: 0.450336 ms
+UnloadTime: 0.469612 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1332.
-Total: 7.061791 ms (FindLiveObjects: 0.170412 ms CreateObjectMapping: 0.234666 ms MarkObjects: 0.711263 ms  DeleteObjects: 0.024304 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1568.
+Total: 2.518476 ms (FindLiveObjects: 0.138285 ms CreateObjectMapping: 0.036317 ms MarkObjects: 0.384685 ms  DeleteObjects: 0.020114 ms)
 
