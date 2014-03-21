@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class thermal_det : MonoBehaviour {
-
 	public float lifeSpan;
 	public GameObject fireEffect;
 

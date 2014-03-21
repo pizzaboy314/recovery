@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class SparkLife : MonoBehaviour {
-
 	private float lifeSpan;
 
 	// Use this for initialization
@@ -13,7 +12,6 @@ public class SparkLife : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		lifeSpan -= Time.deltaTime;
-		
 		if(lifeSpan <= 0){
 			Destroy(gameObject);
 		}
