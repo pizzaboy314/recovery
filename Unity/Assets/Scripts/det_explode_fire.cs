@@ -3,7 +3,7 @@ using System.Collections;
 
 public class det_explode_fire : MonoBehaviour {
 
-	private float lifeSpan;
+	public float lifeSpan;
 
 	// Use this for initialization
 	void Start () {

@@ -158,6 +158,37 @@ ModelImporter:
     4300056: SketchUp_002
     4300058: SketchUp_001
     4300060: SketchUp
+    6400000: SketchUp
+    6400002: SketchUp_001
+    6400004: SketchUp_002
+    6400006: SketchUp_003
+    6400008: SketchUp_004
+    6400010: SketchUp_005
+    6400012: SketchUp_006
+    6400014: SketchUp_007
+    6400016: SketchUp_008
+    6400018: SketchUp_009
+    6400020: SketchUp_010
+    6400022: SketchUp_011
+    6400024: SketchUp_012
+    6400026: SketchUp_013
+    6400028: SketchUp_014
+    6400030: SketchUp_015
+    6400032: SketchUp_016
+    6400034: SketchUp_017
+    6400036: SketchUp_018
+    6400038: SketchUp_019
+    6400040: SketchUp_020
+    6400042: SketchUp_021
+    6400044: SketchUp_022
+    6400046: SketchUp_023
+    6400048: SketchUp_024
+    6400050: SketchUp_025
+    6400052: SketchUp_026
+    6400054: SketchUp_027
+    6400056: SketchUp_028
+    6400058: SketchUp_029
+    6400060: SketchUp_030
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -178,12 +209,12 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: .144999996
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1
