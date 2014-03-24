@@ -2,11 +2,8 @@
 using System.Collections;
 
 public class det_explode_fire : MonoBehaviour {
-<<<<<<< HEAD
 
-=======
 	private static int numNades = 0;
->>>>>>> sgm1branch
 	public float lifeSpan;
 
 	// Use this for initialization
