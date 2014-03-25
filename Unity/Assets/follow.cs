@@ -29,19 +29,23 @@ public class follow : MonoBehaviour {
 		//	ani.SetFloat("Turn", s);
 		lastXAng = angle.x;
 		if (s > 0.5){
+			ani.SetBool("Punching", false);
 			if (angle.x > Mathf.PI / 2)
 				ani.SetFloat("Forward", 0.3f);
 			else
 				ani.SetFloat("Forward", 1f);
 		}
 		else if (s > 0.15){
+			ani.SetBool("Punching", false);
 			if (angle.x > Mathf.PI / 2)
 				ani.SetFloat("Forward", 0.3f);
 			else
 				ani.SetFloat("Forward", s * 2f);
 		}
-		else
+		else{
 			ani.SetFloat("Forward", 0.00f);
+			ani.SetBool("Punching", true);
+		}
 		//yield return null;
 		waitingUpdate = false;
 	}
