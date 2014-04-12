@@ -17,7 +17,7 @@ namespace RobotAI
 				void Start ()
 				{
 						ani = GetComponent<Animator> ();
-						foundPlayer = true;
+						foundPlayer = true;//TODO
 						lastXAng = 0;
 				}
 
@@ -26,6 +26,8 @@ namespace RobotAI
 						//waitingUpdate = true;
 						Vector3 angle = transform.InverseTransformPoint (toFollowPath);
 						float s = Vector3.Distance (transform.position, toFollowPath) / 10f;
+						float factor1 = maxPathSpeed / 0.3f;
+						float factor2 = maxPathSpeed / 0.15f;
 						//Debug.Log ("L:" + angle.x);
 						//if (Mathf.Abs(lastXAng - angle.x) > 1)
 						if (s < 0.3)//if close, turn faster
@@ -35,18 +37,18 @@ namespace RobotAI
 						//else
 						//	ani.SetFloat("Turn", s);
 						lastXAng = angle.x;
-						if (s > maxPathSpeed) {
+						if (s > 0.3f) {
 								ani.SetBool ("Punching", false);
 								if (angle.x > Mathf.PI / 2)
 										ani.SetFloat ("Forward", 0.2f);
 								else
-										ani.SetFloat ("Forward", maxPathSpeed);
-						} else if (s > (maxPathSpeed / 2f)) {
+										ani.SetFloat ("Forward", maxPathSpeed / factor1);
+						} else if (s > 0.15f) {
 								ani.SetBool ("Punching", false);
 								if (angle.x > Mathf.PI / 2)
 										ani.SetFloat ("Forward", (maxPathSpeed / 2f < 0.2f)?(maxPathSpeed / 2f): 0.2f);
 								else
-										ani.SetFloat ("Forward", s * 2f);
+										ani.SetFloat ("Forward", s / factor2);
 						} else {
 								ani.SetFloat ("Forward", 0.00f);
 								ani.SetBool ("Punching", true);
@@ -60,12 +62,12 @@ namespace RobotAI
 				private void moveUpdate ()
 				{
 						Debug.Log("IN HERE");
-						float factor1 = 0.15f / maxFollowSpeed;
-						float factor2 = 0.3f / maxFollowSpeed;
 						//waitingUpdate = true;
 						Vector3 angle = transform.InverseTransformPoint (toFollow.transform.position);
 						float s = Vector3.Distance (transform.position, toFollow.transform.position) / 10f;
-						Debug.Log ("L:" + angle.x);
+						float maxToDis = 1.0f;
+						float lerpFromDis = 0.15f;
+						float factor = maxFollowSpeed / (maxToDis / lerpFromDis);
 						//if (Mathf.Abs(lastXAng - angle.x) > 1)
 						if (s < 0.3)//if close, turn faster
 								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0f));
@@ -74,19 +76,19 @@ namespace RobotAI
 						//else
 						//	ani.SetFloat("Turn", s);
 						lastXAng = angle.x;
-						if (s > maxFollowSpeed) {
+						if (s > maxToDis) {
 								ani.SetBool ("Punching", false);
 								if (angle.x > Mathf.PI / 2)
 										ani.SetFloat ("Forward", (maxPathSpeed / 2f < 0.2f)?(maxPathSpeed / 2f): 0.2f);
 								else
 										ani.SetFloat ("Forward", maxFollowSpeed);
-						} else if (s > (maxFollowSpeed / 2f)) {
+						} else if (s > lerpFromDis) {
 								ani.SetBool ("Punching", false);
 								if (angle.x > Mathf.PI / 2)
-										ani.SetFloat ("Forward", 0.2f);
+										ani.SetFloat ("Forward", (maxPathSpeed / 2f < 0.2f)?(maxPathSpeed / 2f): 0.2f);
 								else
-										ani.SetFloat ("Forward", s * 2f);
-						} else {
+										ani.SetFloat ("Forward", s / factor);
+						} else if (s <= 0.15f){
 								ani.SetFloat ("Forward", 0.00f);
 								ani.SetBool ("Punching", true);
 						}
