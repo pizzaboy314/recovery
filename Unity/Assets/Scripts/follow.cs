@@ -17,7 +17,7 @@ namespace RobotAI
 				void Start ()
 				{
 						ani = GetComponent<Animator> ();
-						foundPlayer = true;//TODO
+						foundPlayer = false;//TODO
 						lastXAng = 0;
 				}
 
@@ -42,13 +42,13 @@ namespace RobotAI
 								if (angle.x > Mathf.PI / 2)
 										ani.SetFloat ("Forward", 0.2f);
 								else
-										ani.SetFloat ("Forward", maxPathSpeed / factor1);
+										ani.SetFloat ("Forward", maxPathSpeed);
 						} else if (s > 0.15f) {
 								ani.SetBool ("Punching", false);
 								if (angle.x > Mathf.PI / 2)
 										ani.SetFloat ("Forward", (maxPathSpeed / 2f < 0.2f)?(maxPathSpeed / 2f): 0.2f);
 								else
-										ani.SetFloat ("Forward", s / factor2);
+										ani.SetFloat ("Forward", s * factor2 / factor1);
 						} else {
 								ani.SetFloat ("Forward", 0.00f);
 								ani.SetBool ("Punching", true);
