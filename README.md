@@ -1,4 +1,6 @@
 Team06
 ======
 
-Shanon Mathai
+Game Title: Recovery
+Genre: FPS Survival Horror
+
