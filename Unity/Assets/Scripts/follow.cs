@@ -7,11 +7,18 @@ namespace RobotAI
 		{
 				public GameObject toFollow;
 				public Vector3 toFollowPath;
-				public float maxPathSpeed;
-				public float maxFollowSpeed;
+				public float maxPathSpeedFactor;
+				public float maxFollowSpeedFactor;
+				public float disToRelease;
 				private Animator ani;
 				private bool foundPlayer;
+				private float maxSpeedDis;
+				private float minSpeedDisPath;
+				private float minSpeedDisFollow;
+				private float lastDis;
 				private float lastXAng;
+				private float minSpeedFactorPath;
+				private float minSpeedFactorFollow;
 
 				// Use this for initialization
 				void Start ()
@@ -19,6 +26,11 @@ namespace RobotAI
 						ani = GetComponent<Animator> ();
 						foundPlayer = false;//TODO
 						lastXAng = 0;
+						minSpeedDisPath = 0.4f;
+						minSpeedDisFollow = 0.18f;
+						maxSpeedDis = 1.0f;
+						minSpeedFactorPath = 0.8f;
+						minSpeedFactorFollow = 0.4f;
 				}
 
 				private void movePathUpdate ()
@@ -26,32 +38,41 @@ namespace RobotAI
 						//waitingUpdate = true;
 						Vector3 angle = transform.InverseTransformPoint (toFollowPath);
 						float s = Vector3.Distance (transform.position, toFollowPath) / 10f;
-						float factor1 = maxPathSpeed / 0.3f;
-						float factor2 = maxPathSpeed / 0.15f;
+						s = Mathf.Lerp (lastDis, s, 0.05f);
+						lastDis = s;
+						float disToPlayer = Vector3.Distance (this.transform.position, toFollow.transform.position);
+						if (disToRelease > disToPlayer)
+							foundPlayer = true;
 						//Debug.Log ("L:" + angle.x);
 						//if (Mathf.Abs(lastXAng - angle.x) > 1)
-						if (s < 0.3)//if close, turn faster
-								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0f));
-						else
-								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 10f));
+						if (s < 0.3){//if close, turn faster
+								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f));
+								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f);
+						}
+						else{//if close, turn faster
+								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f));
+								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f);
+						}
 						//else
 						//	ani.SetFloat("Turn", s);
-						lastXAng = angle.x;
-						if (s > 0.3f) {
+						if (s > maxSpeedDis) {
+								Debug.Log ("Far");
 								ani.SetBool ("Punching", false);
 								if (angle.x > Mathf.PI / 2)
 										ani.SetFloat ("Forward", 0.2f);
 								else
-										ani.SetFloat ("Forward", maxPathSpeed);
-						} else if (s > 0.15f) {
+										ani.SetFloat ("Forward", maxPathSpeedFactor);
+						} else if (s > minSpeedDisPath) {
+								Debug.Log ("out range");
 								ani.SetBool ("Punching", false);
+								float distanceFactor = Mathf.Lerp (minSpeedFactorPath, 1.0f, ((s  - minSpeedDisPath)/(maxSpeedDis - minSpeedDisPath)));
 								if (angle.x > Mathf.PI / 2)
-										ani.SetFloat ("Forward", (maxPathSpeed / 2f < 0.2f)?(maxPathSpeed / 2f): 0.2f);
+										ani.SetFloat ("Forward", (s * maxPathSpeedFactor < 0.2f)?(s * s * maxPathSpeedFactor): 0.2f);
 								else
-										ani.SetFloat ("Forward", s * factor2 / factor1);
+										ani.SetFloat ("Forward", distanceFactor * maxPathSpeedFactor);
 						} else {
-								ani.SetFloat ("Forward", 0.00f);
-								ani.SetBool ("Punching", true);
+								Debug.Log ("in range");
+										ani.SetFloat ("Forward", maxPathSpeedFactor * minSpeedFactorPath);
 						}
 						//yield return null;
 						//waitingUpdate = false;
@@ -61,39 +82,45 @@ namespace RobotAI
 				
 				private void moveUpdate ()
 				{
-						Debug.Log("IN HERE");
+					float disToPlayer = Vector3.Distance (this.transform.position, toFollow.transform.position);
+					if (disToRelease * 1.5f < disToPlayer)
+						foundPlayer = false;
 						//waitingUpdate = true;
 						Vector3 angle = transform.InverseTransformPoint (toFollow.transform.position);
 						float s = Vector3.Distance (transform.position, toFollow.transform.position) / 10f;
-						float maxToDis = 1.0f;
-						float lerpFromDis = 0.15f;
-						float factor = maxFollowSpeed / (maxToDis / lerpFromDis);
+						s = Mathf.Lerp (lastDis, s, 0.05f);
+						lastDis = s;
+						//Debug.Log ("L:" + angle.x);
 						//if (Mathf.Abs(lastXAng - angle.x) > 1)
-						if (s < 0.3)//if close, turn faster
-								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0f));
-						else
-								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 10f));
+						if (s < 0.3){//if close, turn faster
+								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f));
+								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f);
+						}
+						else{//if close, turn faster
+								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f));
+								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f);
+						}
 						//else
 						//	ani.SetFloat("Turn", s);
-						lastXAng = angle.x;
-						if (s > maxToDis) {
+						if (s > maxSpeedDis) {
+								Debug.Log ("Far");
 								ani.SetBool ("Punching", false);
 								if (angle.x > Mathf.PI / 2)
-										ani.SetFloat ("Forward", (maxPathSpeed / 2f < 0.2f)?(maxPathSpeed / 2f): 0.2f);
+										ani.SetFloat ("Forward", 0.2f);
 								else
-										ani.SetFloat ("Forward", maxFollowSpeed);
-						} else if (s > lerpFromDis) {
+										ani.SetFloat ("Forward", maxFollowSpeedFactor);
+						} else if (s > minSpeedDisFollow) {
+								Debug.Log ("out range");
 								ani.SetBool ("Punching", false);
+								float distanceFactor = Mathf.Lerp (minSpeedFactorFollow, 1.0f, ((s  - minSpeedDisFollow)/(maxSpeedDis - minSpeedDisFollow)));
 								if (angle.x > Mathf.PI / 2)
-										ani.SetFloat ("Forward", (maxPathSpeed / 2f < 0.2f)?(maxPathSpeed / 2f): 0.2f);
+										ani.SetFloat ("Forward", (s * maxFollowSpeedFactor < 0.2f)?(s * s * maxFollowSpeedFactor): 0.2f);
 								else
-										ani.SetFloat ("Forward", s / factor);
-						} else if (s <= 0.15f){
-								ani.SetFloat ("Forward", 0.00f);
+										ani.SetFloat ("Forward", distanceFactor * maxFollowSpeedFactor);
+						} else {
+								ani.SetFloat ("Forward", 0);
 								ani.SetBool ("Punching", true);
 						}
-						//yield return null;
-						//waitingUpdate = false;
 				}
 				
 	
