@@ -5,6 +5,7 @@ public class Pulsate : MonoBehaviour {
 
 	public float pulsateAmount;
 	public float pulsateFreq;
+	public bool pulse;
 	private float pTime;
 
 	private Light light;
@@ -16,15 +17,24 @@ public class Pulsate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float var = (Mathf.Sin(pulsateFreq * pTime) / 2f) + 0.5f;
-		pTime += Time.deltaTime;
+		if(pulse == true){
+			float div = 2f * (11f - pulsateAmount);
+			float var = (Mathf.Sin(pulsateFreq * pTime) / div) + 1f  - (1f/div);
+			pTime += Time.deltaTime;
+			
+			Color c = new Color();
+			c.r = 1f;
+			c.g = var;
+			c.b = var;
+			c.a = 0f;
+			
+			light.color = c;
+		}
 
-		Color c = new Color();
-		c.r = 1f;
-		c.g = var;
-		c.b = var;
-		c.a = 1f;
-
-		light.color = c;
+	}
+	public void increaseAmount(){
+		if(pulsateAmount < 10){
+			pulsateAmount++;
+		}
 	}
 }
