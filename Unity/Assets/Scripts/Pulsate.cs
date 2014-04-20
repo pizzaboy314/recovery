@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Pulsate : MonoBehaviour {
 
+	public float pulsateScale;
 	public float pulsateAmount;
 	public float pulsateFreq;
 	public bool pulse;
@@ -18,7 +19,7 @@ public class Pulsate : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(pulse == true){
-			float div = 2f * (11f - pulsateAmount);
+			float div = 2f * (pulsateScale + 1f - pulsateAmount);
 			float var = (Mathf.Sin(pulsateFreq * pTime) / div) + 1f  - (1f/div);
 			pTime += Time.deltaTime;
 			
@@ -26,14 +27,16 @@ public class Pulsate : MonoBehaviour {
 			c.r = 1f;
 			c.g = var;
 			c.b = var;
-			c.a = 0f;
+			c.a = 1f;
 			
 			light.color = c;
+			light.intensity = 0.5f - (var * (0.5f / pulsateScale) * pulsateAmount);
+			light.spotAngle = 80f + ((pulsateAmount - 1) * (40 / pulsateScale));
 		}
 
 	}
 	public void increaseAmount(){
-		if(pulsateAmount < 10){
+		if(pulsateAmount < pulsateScale){
 			pulsateAmount++;
 		}
 	}
