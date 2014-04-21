@@ -14,6 +14,8 @@ public class Pulsate : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		light = GetComponent<Light>();
+		pulsateScale = 10;
+		pulsateFreq = 4;
 	}
 	
 	// Update is called once per frame
