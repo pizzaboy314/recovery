@@ -12,4 +12,8 @@ public class HandleInteraction : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public void getHit(Vector3 from){
+		//Player got hit
+	}
 }

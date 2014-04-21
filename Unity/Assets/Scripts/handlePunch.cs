@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class handlePunch : MonoBehaviour {
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +15,6 @@ public class handlePunch : MonoBehaviour {
 	}
 
 	public void GetHit(){
-		Debug.Log("STUFF GOT HERE");
-
+		player.SendMessage("getHit", new Vector3());//TODO
 	}
 }
