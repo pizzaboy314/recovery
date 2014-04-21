@@ -15,14 +15,17 @@ namespace RobotAI
 				public float minSpeedDisFollow;
 				public float minSpeedFactorPath;
 				public float minSpeedFactorFollow;
+				public float timeBetweenPunch;
 				private Animator ani;
 				private float lastDis;
 				private float lastXAng;
 				private bool foundPlayer;
+				private bool isPunching;
 
 				// Use this for initialization
 				void Start ()
 				{
+						isPunching = false;
 						ani = GetComponent<Animator> ();
 						foundPlayer = false;//TODO
 						lastXAng = 0;
@@ -80,6 +83,12 @@ namespace RobotAI
 						//waitingUpdate = false;
 				}
 
+				private IEnumerator waitForNextPunch(){
+					isPunching = true;
+					yield return new WaitForSeconds(timeBetweenPunch);
+					isPunching = false;
+				}
+
 				//private IEnumerator moveUpdate(){
 				
 				private void moveUpdate ()
@@ -121,7 +130,15 @@ namespace RobotAI
 										ani.SetFloat ("Forward", distanceFactor * maxFollowSpeedFactor);
 						} else {
 								ani.SetFloat ("Forward", 0);
-								ani.SetBool ("Punching", true);
+								if (!isPunching){
+									ani.SetBool ("Punching", true);
+									int atkHash = Animator.StringToHash("Base.Punch");
+									int currentBaseState = ani.GetCurrentAnimatorStateInfo(0).nameHash;
+									if (currentBaseState == atkHash){
+										ani.SetBool ("Punching", false);
+										StartCoroutine(waitForNextPunch());
+									}
+								}
 						}
 				}
 				

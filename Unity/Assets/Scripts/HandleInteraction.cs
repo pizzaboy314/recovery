@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class HandleInteraction : MonoBehaviour {
@@ -11,5 +11,10 @@ public class HandleInteraction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void getHit(Vector3 from){
+		//Player got hit
+		Debug.Log("YA GOT HIT");
 	}
 }
