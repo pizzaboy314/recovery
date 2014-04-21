@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Pulsate : MonoBehaviour {
 
-	public float pulsateScale;
+	public float pulsateScale  = 10;
 	public float pulsateAmount;
-	public float pulsateFreq;
+	public float pulsateFreq = 4;
 	public bool pulse;
 	private float pTime;
 
@@ -14,8 +14,6 @@ public class Pulsate : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		light = GetComponent<Light>();
-		pulsateScale = 10;
-		pulsateFreq = 4;
 	}
 	
 	// Update is called once per frame
