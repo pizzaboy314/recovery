@@ -15,6 +15,6 @@ public class handlePunch : MonoBehaviour {
 	}
 
 	public void GetHit(){
-		player.SendMessage("getHit", new Vector3());//TODO
+		player.SendMessage("getHit", this.transform.position);//TODO
 	}
 }

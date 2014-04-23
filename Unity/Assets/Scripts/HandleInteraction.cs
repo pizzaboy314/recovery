@@ -15,7 +15,7 @@ public class HandleInteraction : MonoBehaviour {
 
 	public void getHit(Vector3 from){
 		//Player got hit
-		this.rigidbody.AddForce((this.transform.position - from) * 100);
+		this.rigidbody.AddForce((this.transform.position - from) * 1000);
 		//Debug.Log("YA GOT HIT");
 	}
 }
