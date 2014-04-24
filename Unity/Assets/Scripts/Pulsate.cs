@@ -3,10 +3,10 @@ using System.Collections;
 
 public class Pulsate : MonoBehaviour {
 
-	public float pulsateScale  = 10;
-	public float pulsateAmount;
-	public float pulsateFreq = 4;
-	public bool pulse;
+	public float pulsateScale  = 10f;
+	public float pulsateAmount = 1f;
+	public float pulsateFreq = 4f;
+	public bool pulsing;
 	private float pTime;
 
 	private Light light;
@@ -18,26 +18,38 @@ public class Pulsate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(pulse == true){
-			float div = 2f * (pulsateScale + 1f - pulsateAmount);
-			float var = (Mathf.Sin(pulsateFreq * pTime) / div) + 1f  - (1f/div);
-			pTime += Time.deltaTime;
-			
-			Color c = new Color();
-			c.r = 1f;
-			c.g = var;
-			c.b = var;
-			c.a = 1f;
-			
-			light.color = c;
-			light.intensity = 0.5f - (var * (0.5f / pulsateScale) * pulsateAmount);
-			light.spotAngle = 80f + ((pulsateAmount - 1) * (40 / pulsateScale));
+		if(pulsing == true){
+			updateLight();
 		}
 
+	}
+	public void updateLight(){
+		float div = 2f * (pulsateScale + 1f - pulsateAmount);
+		float var = (Mathf.Sin(pulsateFreq * pTime) / div) + 1f  - (1f/div);
+		pTime += Time.deltaTime;
+		
+		Color c = new Color();
+		c.r = 1f;
+		c.g = var;
+		c.b = var;
+		c.a = 1f;
+		
+		light.color = c;
+		light.intensity = 0.5f - (var * (0.5f / pulsateScale) * pulsateAmount);
+		light.spotAngle = 80f + ((pulsateAmount - 1) * (40 / pulsateScale));
 	}
 	public void increaseAmount(){
 		if(pulsateAmount < pulsateScale){
 			pulsateAmount++;
+			Debug.Log("Pulsate: " + pulsateAmount);
 		}
+	}
+	public void setPulsing(bool b){
+		pulsing = b;
+	}
+	public void resetPulsation(){
+		pulsing = false;
+		pulsateAmount = 1f;
+		updateLight();
 	}
 }

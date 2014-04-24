@@ -3,9 +3,16 @@ using System.Collections;
 
 public class HandleInteraction : MonoBehaviour {
 
+	public Light spotlight;
+	public GameObject spawnLoc;
+
+	private float health = 10f;
+	private float damage = 0f;
+	private bool lightPulsing;
+
 	// Use this for initialization
 	void Start () {
-	
+		lightPulsing = false;
 	}
 	
 	// Update is called once per frame
@@ -15,7 +22,27 @@ public class HandleInteraction : MonoBehaviour {
 
 	public void getHit(Vector3 from){
 		//Player got hit
-		this.rigidbody.AddForce((this.transform.position - from) * 1000);
-		//Debug.Log("YA GOT HIT");
+
+		if(lightPulsing == false){
+			lightPulsing = true;
+			spotlight.SendMessage("setPulsing", true);
+		}
+		damage++;
+		if(damage >= health){
+			spotlight.SendMessage("resetPulsation");
+			reset();
+		}
+		if(damage > 0f){
+			spotlight.SendMessage("increaseAmount");
+			this.rigidbody.AddForce((this.transform.position - from) * 1000);
+			//Debug.Log("YA GOT HIT");
+		}
+		Debug.Log("Damage: " + damage);
+
+	}
+	public void reset(){
+		lightPulsing = false;
+		damage = 0f;
+		transform.position = spawnLoc.transform.position;
 	}
 }
