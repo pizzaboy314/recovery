@@ -6,9 +6,9 @@ public class simpleMoveFowrd : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		float vel = 125.0f;
+		float vel = 105.0f;
 		following = GameObject.Find("ship").gameObject;
-		rigidbody.velocity = following.transform.up * vel;
+		rigidbody.velocity = (following.transform.up + Vector3.right * 0.15f) * vel * 0.85f;
 		following.rigidbody.velocity = following.transform.up * vel;
 	}
 	

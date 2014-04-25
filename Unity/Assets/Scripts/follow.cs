@@ -58,7 +58,7 @@ namespace RobotAI
 								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f);
 						}
 						else{//if close, turn faster
-								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f));
+								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.02f));
 								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f);
 						}
 						//else
