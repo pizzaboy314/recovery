@@ -775,6 +775,7 @@ MonoBehaviour:
   minSpeedFactorPath: 0
   minSpeedFactorFollow: 0
   timeBetweenPunch: 0
+  taunts: []
 --- !u!95 &27662701
 Animator:
   serializedVersion: 2
@@ -5481,7 +5482,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 312535517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.73115921, y: 2.70970702, z: -33.4197617}
+  m_LocalPosition: {x: -7.10266876, y: 2.70970702, z: -10.806036}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238819689}
@@ -10751,7 +10752,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 736869644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.88532257, y: 2.70970702, z: -36.9414825}
+  m_LocalPosition: {x: -5.87158966, y: 2.70970702, z: -.445611954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238819689}
@@ -14001,7 +14002,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 960254826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.6267395, y: 2.70970702, z: -35.616951}
+  m_LocalPosition: {x: -7.0794754, y: 2.70970702, z: 6.26058483}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238819689}
@@ -15198,6 +15199,7 @@ GameObject:
   - 54: {fileID: 1044697262}
   - 114: {fileID: 1044697265}
   - 114: {fileID: 1044697266}
+  - 82: {fileID: 1044697267}
   m_Layer: 0
   m_Name: robotAITest
   m_TagString: Enemy
@@ -15286,6 +15288,10 @@ MonoBehaviour:
   minSpeedFactorPath: .400000006
   minSpeedFactorFollow: .600000024
   timeBetweenPunch: 1
+  taunts:
+  - {fileID: 8300000, guid: c106d17c6a3a1cd4fb73c725153b0958, type: 3}
+  - {fileID: 8300000, guid: 42ee927eb14b6704eb56c39a27d11c4b, type: 3}
+  - {fileID: 8300000, guid: 31fd7a587544f9f4fa358f8d10ee7c18, type: 3}
 --- !u!114 &1044697265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15315,6 +15321,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1472759503}
+--- !u!82 &1044697267
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1044697259}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: -.0199999996
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .821192026
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: .589403927
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1048647458
 GameObject:
   m_ObjectHideFlags: 0
@@ -16796,7 +16860,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1120815703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.47356415, y: 2.70970702, z: -17.6043682}
+  m_LocalPosition: {x: -4.63955688, y: 2.70970702, z: -17.7323761}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238819689}
@@ -21332,7 +21396,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1417234295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.73140717, y: 2.70970702, z: -33.8667145}
+  m_LocalPosition: {x: -6.50907898, y: 2.70970702, z: -9.52497673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238819689}
@@ -25131,6 +25195,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400000, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
+      propertyPath: taunts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
       propertyPath: m_LocalPosition.x
       value: 132.731628
@@ -25175,6 +25243,18 @@ Prefab:
       propertyPath: timeBetweenPunch
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
+      propertyPath: taunts.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c106d17c6a3a1cd4fb73c725153b0958, type: 3}
+    - target: {fileID: 11400000, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
+      propertyPath: taunts.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 42ee927eb14b6704eb56c39a27d11c4b, type: 3}
+    - target: {fileID: 11400000, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
+      propertyPath: taunts.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 31fd7a587544f9f4fa358f8d10ee7c18, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
   m_RootGameObject: {fileID: 1044697259}
@@ -27846,7 +27926,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1878567321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9590683, y: 2.70970702, z: -17.3980007}
+  m_LocalPosition: {x: -5.69892883, y: 2.70970702, z: -18.4347401}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238819689}
@@ -30863,7 +30943,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092511244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.77363586, y: 2.70970702, z: -47.3372231}
+  m_LocalPosition: {x: -.651748657, y: 2.70970702, z: 4.52262926}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238819689}
@@ -31284,6 +31364,7 @@ MonoBehaviour:
   minSpeedFactorPath: 0
   minSpeedFactorFollow: 0
   timeBetweenPunch: 0
+  taunts: []
 --- !u!95 &2131315035
 Animator:
   serializedVersion: 2

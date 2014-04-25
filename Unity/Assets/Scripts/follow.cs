@@ -16,6 +16,8 @@ namespace RobotAI
 				public float minSpeedFactorPath;
 				public float minSpeedFactorFollow;
 				public float timeBetweenPunch;
+				public AudioClip[] taunts;
+				private float tauntCounter;
 				private Animator ani;
 				private float lastDis;
 				private float lastXAng;
@@ -25,6 +27,7 @@ namespace RobotAI
 				// Use this for initialization
 				void Start ()
 				{
+						tauntCounter = 5f;
 						isPunching = false;
 						ani = GetComponent<Animator> ();
 						foundPlayer = false;//TODO
@@ -142,14 +145,26 @@ namespace RobotAI
 						}
 				}
 				
+				public void periodicTaunt(){
+					tauntCounter += Time.deltaTime;
+					if (tauntCounter >= 5) {
+						int n = Random.Range(1,taunts.Length);
+						audio.clip = taunts[n];
+						audio.Play();
+						tauntCounter = 0f;
+					}
+				}
 	
 				// Update is called once per frame
 				void Update ()
 				{
-							if (foundPlayer)
-								moveUpdate ();
-							else
-								movePathUpdate();
+					if (foundPlayer) {
+						moveUpdate();
+						periodicTaunt();
+					} else {
+						movePathUpdate();
+					}
+								
 				}
 		}
 }
