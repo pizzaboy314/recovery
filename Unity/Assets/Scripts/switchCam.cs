@@ -16,10 +16,16 @@ public class switchCam : MonoBehaviour {
 	
 	}
 
+	private IEnumerator makeCollider(){
+		yield return new WaitForSeconds(2.0f);
+		collider.isTrigger = false;// make trigger invisible wall
+	}
+
 	void OnTriggerEnter(Collider other){
 		if (!done){
 			from.camera.enabled = false;
 			to.camera.enabled = true;
+			StartCoroutine(makeCollider());
 		}
 
 	}
