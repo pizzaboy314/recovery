@@ -13,6 +13,7 @@ GameObject:
   - 20: {fileID: 2000000}
   - 65: {fileID: 6500000}
   - 136: {fileID: 13600000}
+  - 108: {fileID: 10800000}
   m_Layer: 0
   m_Name: DeathCam
   m_TagString: Effect
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 121.212921, y: 1.62105584, z: -80.0949249}
+  m_LocalPosition: {x: 121.608276, y: 1.22885156, z: -78.4665375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,6 +88,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .189999998, y: .360000014, z: .189999998}
   m_Center: {x: .189999998, y: .25, z: -.479999989}
+--- !u!108 &10800000
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: .5
+  m_Range: 25
+  m_SpotAngle: 80
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 0
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b3b97e3b9944649a2ab71ddc6f5c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotlight: {fileID: 10800000}
   lifeSpan: 8
 --- !u!136 &13600000
 CapsuleCollider:

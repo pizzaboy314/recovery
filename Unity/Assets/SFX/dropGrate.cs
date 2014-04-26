@@ -27,7 +27,7 @@ public class dropGrate : MonoBehaviour {
 		grateToDrop.rigidbody.constraints = RigidbodyConstraints.None;
 		grateToDrop.rigidbody.useGravity = true;
 		Debug.Log("Appliing forces");
-		grateToDrop.rigidbody.AddForce ((Vector3.down + Vector3.left) * 100);
+		grateToDrop.rigidbody.AddForce ((Vector3.down + Vector3.left) * 300);
 		grateToDrop.rigidbody.AddRelativeTorque((Vector3.down + Vector3.left) * 1000);
 	}
 }

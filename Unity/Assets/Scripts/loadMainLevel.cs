@@ -14,6 +14,9 @@ public class loadMainLevel : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-		Application.LoadLevel("level1");
+		if (col.gameObject.name == "Player") {
+			Camera.main.enabled = false;
+			Application.LoadLevel("level1");
+		}
 	}
 }

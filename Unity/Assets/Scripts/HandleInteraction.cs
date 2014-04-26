@@ -45,6 +45,7 @@ public class HandleInteraction : MonoBehaviour {
 	}
 	public void killCam(Vector3 vec){
 		GameObject c = Instantiate(deathCam, mainCam.transform.position, mainCam.transform.rotation) as GameObject;
+		c.SendMessage("setLightAttributes", spotlight);
 		c.rigidbody.velocity = (c.transform.position - vec).normalized * 20;
 	}
 	public void reset(){
