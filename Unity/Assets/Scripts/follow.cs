@@ -23,6 +23,7 @@ namespace RobotAI
 				private float lastXAng;
 				private bool foundPlayer;
 				private bool isPunching;
+				public WaypointProgressTracker trker;
 
 				// Use this for initialization
 				void Start ()
@@ -97,8 +98,11 @@ namespace RobotAI
 				private void moveUpdate ()
 				{
 					float disToPlayer = Vector3.Distance (this.transform.position, toFollow.transform.position);
-					if (disToAttach * 1.5f < disToPlayer)
+					if (disToAttach * 1.5f < disToPlayer){
+						Debug.Log("Reset tracker");
+						trker.Reset();
 						foundPlayer = false;
+					}
 					//waitingUpdate = true;
 					Vector3 angle = transform.InverseTransformPoint (toFollow.transform.position);
 					float s = Vector3.Distance (transform.position, toFollow.transform.position) / 10f;

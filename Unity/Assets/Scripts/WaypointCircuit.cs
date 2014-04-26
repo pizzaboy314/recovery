@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using RobotAI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -36,6 +37,7 @@ public class WaypointCircuit : MonoBehaviour {
 			CachePositionsAndDistances();
 		}
 		numPoints = Waypoints.Length;
+		CircuitRefs.courses.Add(this);
 	}
 
 	public RoutePoint GetRoutePoint(float dist)

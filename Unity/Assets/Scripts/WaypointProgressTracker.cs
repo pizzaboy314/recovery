@@ -11,17 +11,21 @@ public class WaypointProgressTracker : MonoBehaviour
 		// and keeps track of progress and laps.
 	
 		[SerializeField]
-		WaypointCircuit circuit;         // A reference to the waypoint-based route we should follow
+		WaypointCircuit
+				circuit;         // A reference to the waypoint-based route we should follow
 	
 		[SerializeField]
-		follow followScript;
+		follow
+				followScript;
 		[SerializeField]
-		float lookAheadForTargetOffset = 5;		// The offset ahead along the route that the we will aim for
+		float
+				lookAheadForTargetOffset = 5;		// The offset ahead along the route that the we will aim for
 
 		//[SerializeField]
 		//ProgressStyle progressStyle = ProgressStyle.SmoothAlongRoute; // whether to update the position smoothly along the route (good for curved paths) or just when we reach each waypoint.
 		[SerializeField]
-		float pointToPointThreshold = 4;  // proximity to waypoint which must be reached to switch target to next waypoint : only used in PointToPoint mode.
+		float
+				pointToPointThreshold = 4;  // proximity to waypoint which must be reached to switch target to next waypoint : only used in PointToPoint mode.
 
 		public enum ProgressStyle
 		{
@@ -43,7 +47,6 @@ public class WaypointProgressTracker : MonoBehaviour
 		// setup script properties
 		void Start ()
 		{
-
 				// we use a transform to represent the point to aim for, and the point which
 				// is considered for upcoming changes-of-speed. This allows this component 
 				// to communicate this information to the AI without requiring further dependencies.
@@ -52,38 +55,55 @@ public class WaypointProgressTracker : MonoBehaviour
 				// then this component will update it, and the AI can read it.
 				curTarget = followScript.transform.position;
 				followScript.toFollowPath = curTarget;
-
+				followScript.trker = this;
 				Reset ();
 
+		}
+
+		private int closestIndex ()
+		{
+				int l = circuit.waypointList.items.Length;
+				int ret = 0;
+				float dis = Vector3.Distance (circuit.waypointList.items [0].position, this.transform.position);
+				float nextDis;
+				for (int i = 1; i < l; ++i) {
+						nextDis = Vector3.Distance (circuit.waypointList.items [i].position, this.transform.position);
+						if (nextDis < dis) {
+								dis = nextDis;
+								ret = i;
+						}
+				}
+				return (ret + 1) % (circuit.waypointList.items.Length);
 		}
 
 		// reset the object to sensible values
 		public void Reset ()
 		{
-				progressNum = 0;
-		curTarget = circuit.Waypoints [progressNum].position;
-		followScript.toFollowPath = curTarget;
-						//target.rotation = circuit.Waypoints [progressNum].rotation;
+				circuit = CircuitRefs.getClosestCourse(this.transform.position);
+				progressNum = closestIndex ();
+				curTarget = circuit.Waypoints [progressNum].position;
+				followScript.toFollowPath = curTarget;
+				//target.rotation = circuit.Waypoints [progressNum].rotation;
 		}
 
 		void Update ()
 		{
-						Vector3 targetDelta = curTarget - transform.position;
-						if (targetDelta.magnitude < pointToPointThreshold) {
-								progressNum = (progressNum + 1) % circuit.Waypoints.Length;
-						}
+				Vector3 targetDelta = curTarget - transform.position;
+				if (targetDelta.magnitude < pointToPointThreshold) {
+						progressNum = (progressNum + 1) % circuit.Waypoints.Length;
+				}
 
 			
-		curTarget = circuit.Waypoints [progressNum].position;
-		followScript.toFollowPath = curTarget;
-						//target.rotation = circuit.Waypoints [progressNum].rotation;
+				curTarget = circuit.Waypoints [progressNum].position;
+				followScript.toFollowPath = curTarget;
+				//target.rotation = circuit.Waypoints [progressNum].rotation;
 
-						// get our current progress along the route
-						progressPoint = circuit.GetRoutePoint (progressDistance);
-						Vector3 progressDelta = progressPoint.position - transform.position;
-						if (Vector3.Dot (progressDelta, progressPoint.direction) < 0) {
-								progressDistance += progressDelta.magnitude;
-						}
+				// get our current progress along the route
+				progressPoint = circuit.GetRoutePoint (progressDistance);
+				Vector3 progressDelta = progressPoint.position - transform.position;
+				if (Vector3.Dot (progressDelta, progressPoint.direction) < 0) {
+						progressDistance += progressDelta.magnitude;
+				}
 		}
 	
 		void OnDrawGizmos ()
