@@ -17588,7 +17588,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1153703892}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 9d1e2a3cbcb1b4140b0ed647bcb06968, type: 3}
   m_PlayOnAwake: 1
@@ -22353,7 +22353,7 @@ MonoBehaviour:
   spawnLoc: {fileID: 344877330}
   deathCam: {fileID: 100000, guid: c655e86697e0740428ce7891043178ae, type: 2}
   mainCam: {fileID: 1153703898}
-  health: 1
+  health: 10
 --- !u!1 &1481082332
 GameObject:
   m_ObjectHideFlags: 0
