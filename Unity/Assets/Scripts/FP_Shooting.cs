@@ -45,7 +45,7 @@ public class FP_Shooting : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		cooldownRemaining -= Time.deltaTime;
 
 		if(Input.GetButtonDown("Fire1") && cooldownRemaining <= 0){
