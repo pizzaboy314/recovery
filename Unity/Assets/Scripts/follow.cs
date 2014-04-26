@@ -133,7 +133,7 @@ namespace RobotAI
 									ani.SetFloat ("Forward", distanceFactor * maxFollowSpeedFactor);
 					} else {
 							ani.SetFloat ("Forward", 0);
-							if (!isPunching && disToPlayer < 2.0f){//TODO tweek distancce
+							if (!isPunching && s * 10.1f > disToPlayer){//TODO tweek distancce
 								ani.SetBool ("Punching", true);
 								int atkHash = Animator.StringToHash("Base.Punch");
 								int currentBaseState = ani.GetCurrentAnimatorStateInfo(0).nameHash;
