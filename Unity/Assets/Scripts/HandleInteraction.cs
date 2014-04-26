@@ -44,7 +44,8 @@ public class HandleInteraction : MonoBehaviour {
 
 	}
 	public void killCam(){
-		Instantiate(deathCam, mainCam.transform.position, mainCam.transform.rotation);
+		GameObject spawn = (GameObject)Instantiate(deathCam, mainCam.transform.position, mainCam.transform.rotation);
+		spawn.SendMessage("setLightAttributes", spotlight);
 	}
 	public void reset(){
 		lightPulsing = false;
