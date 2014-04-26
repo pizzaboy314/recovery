@@ -8,22 +8,26 @@ public class dropGrate : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		applied = false;
+		if (grateToDrop.rigidbody == null)
+			grateToDrop.AddComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (!applied)
+			grateToDrop.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 	}
 
 	void OnTriggerEnter(Collider other){
+		if (other.name == grateToDrop.name)
+			return;
 		if (applied)
 			return;
-		if (grateToDrop.rigidbody == null)
-			grateToDrop.AddComponent<Rigidbody>();
-		grateToDrop.rigidbody.useGravity = true;
 		applied = true;
+		grateToDrop.rigidbody.constraints = RigidbodyConstraints.None;
+		grateToDrop.rigidbody.useGravity = true;
 		Debug.Log("Appliing forces");
-		grateToDrop.rigidbody.AddForce ((Vector3.down + Vector3.left) * 10000);
-		grateToDrop.rigidbody.AddRelativeTorque((Vector3.down + Vector3.left) * 10000);
+		grateToDrop.rigidbody.AddForce ((Vector3.down + Vector3.left) * 100);
+		grateToDrop.rigidbody.AddRelativeTorque((Vector3.down + Vector3.left) * 1000);
 	}
 }
