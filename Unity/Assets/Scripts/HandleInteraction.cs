@@ -8,7 +8,7 @@ public class HandleInteraction : MonoBehaviour {
 	public GameObject deathCam;
 	public Camera mainCam;
 
-	private float health = 10f;
+	public float health = 10f;
 	private float damage = 0f;
 	private bool lightPulsing;
 
@@ -31,7 +31,7 @@ public class HandleInteraction : MonoBehaviour {
 		}
 		damage++;
 		if(damage >= health){
-			killCam();
+			killCam(from);
 			spotlight.SendMessage("resetPulsation");
 			reset();
 		}
@@ -43,8 +43,9 @@ public class HandleInteraction : MonoBehaviour {
 		Debug.Log("Damage: " + damage);
 
 	}
-	public void killCam(){
-		Instantiate(deathCam, mainCam.transform.position, mainCam.transform.rotation);
+	public void killCam(Vector3 vec){
+		GameObject c = Instantiate(deathCam, mainCam.transform.position, mainCam.transform.rotation) as GameObject;
+		c.rigidbody.velocity = (c.transform.position - vec).normalized * 20;
 	}
 	public void reset(){
 		lightPulsing = false;

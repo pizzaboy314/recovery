@@ -7,15 +7,15 @@ namespace RobotAI
 		{
 				public GameObject toFollow;
 				public Vector3 toFollowPath;
-				public float maxPathSpeedFactor;
-				public float maxFollowSpeedFactor;
-				public float disToRelease;
-				public float maxSpeedDis;
-				public float minSpeedDisPath;
-				public float minSpeedDisFollow;
-				public float minSpeedFactorPath;
-				public float minSpeedFactorFollow;
-				public float timeBetweenPunch;
+				public float maxPathSpeedFactor = 0.6f;
+				public float maxFollowSpeedFactor = 1.0f;
+				public float disToAttach = 10.0f;
+				public float maxSpeedDis = 1.0f;
+				public float minSpeedDisPath = 0.4f;
+				public float minSpeedDisFollow = 0.22f;
+				public float minSpeedFactorPath = 1.0f;
+				public float minSpeedFactorFollow = 0.6f;
+				public float timeBetweenPunch = 1.0f;
 				public AudioClip[] taunts;
 				private float tauntCounter;
 				private Animator ani;
@@ -49,7 +49,7 @@ namespace RobotAI
 						s = Mathf.Lerp (lastDis, s, 0.05f);
 						lastDis = s;
 						float disToPlayer = Vector3.Distance (this.transform.position, toFollow.transform.position);
-						if (disToRelease > disToPlayer)
+						if (disToAttach > disToPlayer)
 							foundPlayer = true;
 						//Debug.Log ("L:" + angle.x);
 						//if (Mathf.Abs(lastXAng - angle.x) > 1)
@@ -97,58 +97,58 @@ namespace RobotAI
 				private void moveUpdate ()
 				{
 					float disToPlayer = Vector3.Distance (this.transform.position, toFollow.transform.position);
-					if (disToRelease * 1.5f < disToPlayer)
+					if (disToAttach * 1.5f < disToPlayer)
 						foundPlayer = false;
-						//waitingUpdate = true;
-						Vector3 angle = transform.InverseTransformPoint (toFollow.transform.position);
-						float s = Vector3.Distance (transform.position, toFollow.transform.position) / 10f;
-						s = Mathf.Lerp (lastDis, s, 0.05f);
-						lastDis = s;
-						//Debug.Log ("L:" + angle.x);
-						//if (Mathf.Abs(lastXAng - angle.x) > 1)
-						if (s < 0.3){//if close, turn faster
-								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f));
-								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f);
-						}
-						else{//if close, turn faster
-								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f));
-								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f);
-						}
-						//else
-						//	ani.SetFloat("Turn", s);
-						if (s > maxSpeedDis) {
-								//Debug.Log ("Far");
-								ani.SetBool ("Punching", false);
-								if (angle.x > Mathf.PI / 2)
-										ani.SetFloat ("Forward", 0.2f);
-								else
-										ani.SetFloat ("Forward", maxFollowSpeedFactor);
-						} else if (s > minSpeedDisFollow) {
-								//Debug.Log ("out range");
-								ani.SetBool ("Punching", false);
-								float distanceFactor = Mathf.Lerp (minSpeedFactorFollow, 1.0f, ((s  - minSpeedDisFollow)/(maxSpeedDis - minSpeedDisFollow)));
-								if (angle.x > Mathf.PI / 2)
-										ani.SetFloat ("Forward", (s * maxFollowSpeedFactor < 0.2f)?(s * s * maxFollowSpeedFactor): 0.2f);
-								else
-										ani.SetFloat ("Forward", distanceFactor * maxFollowSpeedFactor);
-						} else {
-								ani.SetFloat ("Forward", 0);
-								if (!isPunching){
-									ani.SetBool ("Punching", true);
-									int atkHash = Animator.StringToHash("Base.Punch");
-									int currentBaseState = ani.GetCurrentAnimatorStateInfo(0).nameHash;
-									if (currentBaseState == atkHash){
-										ani.SetBool ("Punching", false);
-										StartCoroutine(waitForNextPunch());
-									}
+					//waitingUpdate = true;
+					Vector3 angle = transform.InverseTransformPoint (toFollow.transform.position);
+					float s = Vector3.Distance (transform.position, toFollow.transform.position) / 10f;
+					s = Mathf.Lerp (lastDis, s, 0.05f);
+					lastDis = s;
+					//Debug.Log ("L:" + angle.x);
+					//if (Mathf.Abs(lastXAng - angle.x) > 1)
+					if (s < 0.3){//if close, turn faster
+							ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f));
+							lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f);
+					}
+					else{//if close, turn faster
+							ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f));
+							lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f);
+					}
+					//else
+					//	ani.SetFloat("Turn", s);
+					if (s > maxSpeedDis) {
+							//Debug.Log ("Far");
+							ani.SetBool ("Punching", false);
+							if (angle.x > Mathf.PI / 2)
+									ani.SetFloat ("Forward", 0.2f);
+							else
+									ani.SetFloat ("Forward", maxFollowSpeedFactor);
+					} else if (s > minSpeedDisFollow) {
+							//Debug.Log ("out range");
+							ani.SetBool ("Punching", false);
+							float distanceFactor = Mathf.Lerp (minSpeedFactorFollow, 1.0f, ((s  - minSpeedDisFollow)/(maxSpeedDis - minSpeedDisFollow)));
+							if (angle.x > Mathf.PI / 2)
+									ani.SetFloat ("Forward", (s * maxFollowSpeedFactor < 0.2f)?(s * s * maxFollowSpeedFactor): 0.2f);
+							else
+									ani.SetFloat ("Forward", distanceFactor * maxFollowSpeedFactor);
+					} else {
+							ani.SetFloat ("Forward", 0);
+							if (!isPunching && disToPlayer < 2.0f){//TODO tweek distancce
+								ani.SetBool ("Punching", true);
+								int atkHash = Animator.StringToHash("Base.Punch");
+								int currentBaseState = ani.GetCurrentAnimatorStateInfo(0).nameHash;
+								if (currentBaseState == atkHash){
+									ani.SetBool ("Punching", false);
+									StartCoroutine(waitForNextPunch());
 								}
-						}
+							}
+					}
 				}
 				
 				public void periodicTaunt(){
 					tauntCounter += Time.deltaTime;
 					if (tauntCounter >= 5) {
-						int n = Random.Range(1,taunts.Length);
+						int n = Random.Range(0,taunts.Length);
 						audio.clip = taunts[n];
 						audio.Play();
 						tauntCounter = 0f;

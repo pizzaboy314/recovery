@@ -12,10 +12,10 @@ SceneSettings:
     backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: .0199999996
+  m_FogDensity: 0
   m_LinearFogStart: 150
   m_LinearFogEnd: 300
   m_AmbientLight: {r: .316176474, g: .316176474, b: .316176474, a: 1}
@@ -768,7 +768,7 @@ MonoBehaviour:
   toFollowPath: {x: 0, y: 0, z: 0}
   maxPathSpeedFactor: 0
   maxFollowSpeedFactor: 0
-  disToRelease: 0
+  disToAttach: 10
   maxSpeedDis: 0
   minSpeedDisPath: 0
   minSpeedDisFollow: 0
@@ -1659,10 +1659,6 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
-      propertyPath: toFollow
-      value: 
-      objectReference: {fileID: 1472759503}
     - target: {fileID: 11400002, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
       propertyPath: circuit
       value: 
@@ -1671,11 +1667,12 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1472759503}
-    - target: {fileID: 11400000, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
-      propertyPath: timeBetweenPunch
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
+      propertyPath: followScript
+      value: 
+      objectReference: {fileID: 1044697264}
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8d0cad74f7b052e47a724b9cf597a797, type: 2}
   m_RootGameObject: {fileID: 1044697259}
   m_IsPrefabParent: 0
@@ -6004,9 +6001,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 344877334}
-  - 33: {fileID: 344877333}
-  - 65: {fileID: 344877332}
-  - 23: {fileID: 344877331}
   m_Layer: 0
   m_Name: respawn loc
   m_TagString: Untagged
@@ -6014,46 +6008,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!23 &344877331
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 344877330}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!65 &344877332
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 344877330}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &344877333
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 344877330}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &344877334
 Transform:
   m_ObjectHideFlags: 0
@@ -6061,7 +6015,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 344877330}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: 99.2519913, y: 1.79783773, z: -88.2455063}
+  m_LocalPosition: {x: 101, y: 1.25, z: -92.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -15254,12 +15208,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 1044697260}
   - 95: {fileID: 1044697261}
-  - 114: {fileID: 1044697264}
   - 136: {fileID: 1044697263}
   - 54: {fileID: 1044697262}
   - 114: {fileID: 1044697265}
   - 114: {fileID: 1044697266}
   - 82: {fileID: 1044697267}
+  - 114: {fileID: 1044697264}
   m_Layer: 0
   m_Name: robotAITest
   m_TagString: Enemy
@@ -15328,9 +15282,8 @@ CapsuleCollider:
 --- !u!114 &1044697264
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 8d0cad74f7b052e47a724b9cf597a797,
-    type: 2}
-  m_PrefabInternal: {fileID: 87277600}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1044697259}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -15339,18 +15292,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toFollow: {fileID: 1472759503}
   toFollowPath: {x: 0, y: 0, z: 0}
-  maxPathSpeedFactor: 1
+  maxPathSpeedFactor: .600000024
   maxFollowSpeedFactor: 1
-  disToRelease: 10
+  disToAttach: 10
   maxSpeedDis: 1
   minSpeedDisPath: .400000006
   minSpeedDisFollow: .219999999
-  minSpeedFactorPath: .400000006
+  minSpeedFactorPath: 1
   minSpeedFactorFollow: .600000024
   timeBetweenPunch: 1
   taunts:
-  - {fileID: 8300000, guid: c106d17c6a3a1cd4fb73c725153b0958, type: 3}
   - {fileID: 8300000, guid: 42ee927eb14b6704eb56c39a27d11c4b, type: 3}
+  - {fileID: 8300000, guid: c106d17c6a3a1cd4fb73c725153b0958, type: 3}
   - {fileID: 8300000, guid: 31fd7a587544f9f4fa358f8d10ee7c18, type: 3}
 --- !u!114 &1044697265
 MonoBehaviour:
@@ -22397,6 +22350,7 @@ MonoBehaviour:
   spawnLoc: {fileID: 344877330}
   deathCam: {fileID: 100000, guid: c655e86697e0740428ce7891043178ae, type: 2}
   mainCam: {fileID: 1153703898}
+  health: 1
 --- !u!1 &1481082332
 GameObject:
   m_ObjectHideFlags: 0
@@ -31348,7 +31302,7 @@ MonoBehaviour:
   toFollowPath: {x: 0, y: 0, z: 0}
   maxPathSpeedFactor: 0
   maxFollowSpeedFactor: 0
-  disToRelease: 0
+  disToAttach: 10
   maxSpeedDis: 0
   minSpeedDisPath: 0
   minSpeedDisFollow: 0

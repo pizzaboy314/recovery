@@ -4,6 +4,9 @@ using System.Collections;
 public class DeathCam : MonoBehaviour {
 
 	public float lifeSpan = 4f;
+	private float curSpan;
+	private float maxDens = 1.0f;
+	private float startingDens;
 	private GameObject player;
 	private Camera cam;
 
@@ -11,7 +14,9 @@ public class DeathCam : MonoBehaviour {
 	void Start () {
 		player = GameObject.Find("Player");
 		cam = GetComponent<Camera>();
+		startingDens = RenderSettings.fogDensity;
 		cam.enabled = true;
+		curSpan = 0;
 		player.GetComponent<FirstPersonController2>().enabled = false;
 		player.GetComponent<MouseRotator>().enabled = false;
 		player.GetComponent<FP_Shooting>().enabled = false;
@@ -21,9 +26,11 @@ public class DeathCam : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		lifeSpan -= Time.deltaTime;
-		if(lifeSpan <= 0){
+		curSpan += Time.deltaTime;
+		RenderSettings.fogDensity = Mathf.Lerp(startingDens, maxDens, curSpan / lifeSpan);
+		if(curSpan >= lifeSpan){
 			cam.enabled = false;
+			RenderSettings.fogDensity = startingDens;
 			Destroy(gameObject);
 			player.GetComponent<FirstPersonController2>().enabled = true;
 			player.GetComponent<MouseRotator>().enabled = true;
