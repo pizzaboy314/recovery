@@ -51,5 +51,6 @@ public class Pulsate : MonoBehaviour {
 		pulsing = false;
 		pulsateAmount = 1f;
 		updateLight();
+		light.intensity = 0.5f;
 	}
 }

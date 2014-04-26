@@ -5,6 +5,8 @@ public class HandleInteraction : MonoBehaviour {
 
 	public Light spotlight;
 	public GameObject spawnLoc;
+	public GameObject deathCam;
+	public Camera mainCam;
 
 	private float health = 10f;
 	private float damage = 0f;
@@ -29,6 +31,7 @@ public class HandleInteraction : MonoBehaviour {
 		}
 		damage++;
 		if(damage >= health){
+			killCam();
 			spotlight.SendMessage("resetPulsation");
 			reset();
 		}
@@ -39,6 +42,9 @@ public class HandleInteraction : MonoBehaviour {
 		}
 		Debug.Log("Damage: " + damage);
 
+	}
+	public void killCam(){
+		Instantiate(deathCam, mainCam.transform.position, mainCam.transform.rotation);
 	}
 	public void reset(){
 		lightPulsing = false;
