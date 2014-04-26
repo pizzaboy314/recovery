@@ -18,7 +18,6 @@ namespace RobotAI
 			public static List<WaypointCircuit> courses = new List<WaypointCircuit>();
 
 			public static WaypointCircuit getClosestCourse(Vector3 point){
-				Debug.Log("STUDD");
 				int i = 0;
 				float cDist;
 				WaypointCircuit closest = courses[0];
