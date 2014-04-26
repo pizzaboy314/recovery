@@ -4,10 +4,13 @@ using System.Collections;
 public class SwitchToBroken : MonoBehaviour {
 	public GameObject failingShip;
 	public GameObject brokenShip;
+	public Light spot;
+	private float counter;
 	private bool isBroken;
 
 	// Use this for initialization
 	void Start () {
+		counter = 0f;
 		isBroken = false;
 		failingShip.renderer.enabled = true;
 		brokenShip.renderer.enabled = false;
@@ -15,7 +18,10 @@ public class SwitchToBroken : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		counter += Time.deltaTime;
+		if (counter >= 4f) {
+			spot.enabled = false;
+		}
 	}
 	public void OnCollisionEnter(Collision col){
 		if (isBroken == false) {
