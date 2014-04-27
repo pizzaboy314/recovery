@@ -26,6 +26,7 @@ public class DeathCam : MonoBehaviour {
 		player.GetComponent<HeadBob>().enabled = false;
 		Screen.showCursor = false;	
 		InvokeRepeating("fadeOut", 0f, 0.25f);
+		audio.Play ();
 	}
 	
 	// Update is called once per frame
