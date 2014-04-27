@@ -26,8 +26,9 @@ public class dropGrate : MonoBehaviour {
 		applied = true;
 		grateToDrop.rigidbody.constraints = RigidbodyConstraints.None;
 		grateToDrop.rigidbody.useGravity = true;
-		Debug.Log("Appliing forces");
+		Debug.Log("Applying forces");
 		grateToDrop.rigidbody.AddForce ((Vector3.down + Vector3.left) * 300);
 		grateToDrop.rigidbody.AddRelativeTorque((Vector3.down + Vector3.left) * 1000);
+		audio.Play ();
 	}
 }

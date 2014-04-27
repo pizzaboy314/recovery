@@ -1,0 +1,53 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="sci_fi_spaceship_pass_by_data" version="1.3.0" audacityversion="2.0.5" sel0="4.8399462300" sel1="8.4890392005" vpos="32" h="0.0000000000" zoom="119.2162004662" rate="44100.0">
+	<tags>
+		<tag name="TITLE" value="http://www.freesfx.co.uk"/>
+	</tags>
+	<wavetrack name="sci_fi_spaceship_pass_by" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="349952">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000acc.au" len="174976" min="-0.862008" max="0.913448" rms="0.177168"/>
+				</waveblock>
+				<waveblock start="174976">
+					<simpleblockfile filename="e0000360.au" len="174976" min="-0.479988" max="0.516856" rms="0.074599"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="sci_fi_spaceship_pass_by" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="349952">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000f35.au" len="174976" min="-0.90078" max="0.79358" rms="0.129123"/>
+				</waveblock>
+				<waveblock start="174976">
+					<simpleblockfile filename="e0000e17.au" len="174976" min="-0.522421" max="0.546338" rms="0.088943"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="crash-jet-4" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="4.83994623">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="160925">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000528.au" len="160925" min="-0.699341" max="0.781738" rms="0.096"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="crash-jet-4" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="4.83994623">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="160925">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000ec1.au" len="160925" min="-0.772034" max="0.715118" rms="0.101802"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

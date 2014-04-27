@@ -1,0 +1,324 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="96467__imitatia-dei__rev-spaceship-drone-full-wet-resample_data" version="1.3.0" audacityversion="2.0.5" sel0="0.0000000000" sel1="52.1170748299" vpos="0" h="0.0000000000" zoom="24.7981386328" rate="44100.0">
+	<tags>
+		<tag name="Software" value="Edison"/>
+		<tag name="COMMENTS" value="Recorded on 09/05/2010 in Edison."/>
+	</tags>
+	<wavetrack name="96467__imitatia-dei__rev-spaceship-drone-full-wet-resample" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2249050">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000c61.au" len="262144" min="-0.261133" max="0.31603" rms="0.054279"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e0000fdb.au" len="262144" min="-0.198441" max="0.199606" rms="0.048094"/>
+				</waveblock>
+				<waveblock start="524288">
+					<simpleblockfile filename="e000082d.au" len="262144" min="-0.178211" max="0.170212" rms="0.040702"/>
+				</waveblock>
+				<waveblock start="786432">
+					<simpleblockfile filename="e00008d0.au" len="262144" min="-0.148512" max="0.142372" rms="0.034278"/>
+				</waveblock>
+				<waveblock start="1048576">
+					<simpleblockfile filename="e0000c94.au" len="262144" min="-0.157305" max="0.1362" rms="0.027971"/>
+				</waveblock>
+				<waveblock start="1310720">
+					<simpleblockfile filename="e00000c4.au" len="262144" min="-0.126897" max="0.120578" rms="0.024611"/>
+				</waveblock>
+				<waveblock start="1572864">
+					<simpleblockfile filename="e0000c31.au" len="262144" min="-0.052008" max="0.04727" rms="0.01075"/>
+				</waveblock>
+				<waveblock start="1835008">
+					<simpleblockfile filename="e00006a9.au" len="262144" min="-0.112136" max="0.099773" rms="0.015889"/>
+				</waveblock>
+				<waveblock start="2097152">
+					<simpleblockfile filename="e0000ae8.au" len="151898" min="-0.017809" max="0.014186" rms="0.001663"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="96467__imitatia-dei__rev-spaceship-drone-full-wet-resample" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2249050">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000d9b.au" len="262144" min="-0.316228" max="0.273871" rms="0.055283"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e0000000.au" len="262144" min="-0.180919" max="0.196019" rms="0.044837"/>
+				</waveblock>
+				<waveblock start="524288">
+					<simpleblockfile filename="e00006ea.au" len="262144" min="-0.156749" max="0.185014" rms="0.038204"/>
+				</waveblock>
+				<waveblock start="786432">
+					<simpleblockfile filename="e000071a.au" len="262144" min="-0.16697" max="0.173984" rms="0.036833"/>
+				</waveblock>
+				<waveblock start="1048576">
+					<simpleblockfile filename="e0000207.au" len="262144" min="-0.171981" max="0.169214" rms="0.02971"/>
+				</waveblock>
+				<waveblock start="1310720">
+					<simpleblockfile filename="e00007f7.au" len="262144" min="-0.191915" max="0.179035" rms="0.026859"/>
+				</waveblock>
+				<waveblock start="1572864">
+					<simpleblockfile filename="e0000e74.au" len="262144" min="-0.059911" max="0.057028" rms="0.012593"/>
+				</waveblock>
+				<waveblock start="1835008">
+					<simpleblockfile filename="e00004b9.au" len="262144" min="-0.163765" max="0.153179" rms="0.020007"/>
+				</waveblock>
+				<waveblock start="2097152">
+					<simpleblockfile filename="e00004e1.au" len="151898" min="-0.015868" max="0.014802" rms="0.001918"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="96465__imitatia-dei__rev-spaceship-drone-full-wet-resample-2-metallic" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="3.88764172">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2126918">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000d30.au" len="199901" min="-0.014987" max="0.01544" rms="0.001879"/>
+				</waveblock>
+				<waveblock start="199901">
+					<simpleblockfile filename="e000022e.au" len="262144" min="-0.029286" max="0.029421" rms="0.00541"/>
+				</waveblock>
+				<waveblock start="462045">
+					<simpleblockfile filename="e00007b3.au" len="262144" min="-0.023414" max="0.026297" rms="0.005061"/>
+				</waveblock>
+				<waveblock start="724189">
+					<simpleblockfile filename="e0000a90.au" len="262144" min="-0.05237" max="0.056543" rms="0.011961"/>
+				</waveblock>
+				<waveblock start="986333">
+					<simpleblockfile filename="e0000af9.au" len="262144" min="-0.061735" max="0.064808" rms="0.011723"/>
+				</waveblock>
+				<waveblock start="1248477">
+					<simpleblockfile filename="e0000b35.au" len="262144" min="-0.083994" max="0.075357" rms="0.01669"/>
+				</waveblock>
+				<waveblock start="1510621">
+					<simpleblockfile filename="e0000406.au" len="262144" min="-0.069423" max="0.066961" rms="0.017754"/>
+				</waveblock>
+				<waveblock start="1772765">
+					<simpleblockfile filename="e0000b75.au" len="177076" min="-0.085117" max="0.096157" rms="0.021692"/>
+				</waveblock>
+				<waveblock start="1949841">
+					<simpleblockfile filename="e00008ad.au" len="177077" min="-0.120701" max="0.121493" rms="0.026538"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="171445">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000941.au" len="39718" min="-0.061622" max="0.07451" rms="0.016648"/>
+				</waveblock>
+				<waveblock start="39718">
+					<simpleblockfile filename="e0000508.au" len="131727" min="-0.079694" max="0.06846" rms="0.009754"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="96465__imitatia-dei__rev-spaceship-drone-full-wet-resample-2-metallic" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="3.88764172">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2126918">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000ce7.au" len="199901" min="-0.03976" max="0.039319" rms="0.004803"/>
+				</waveblock>
+				<waveblock start="199901">
+					<simpleblockfile filename="e0000549.au" len="262144" min="-0.051908" max="0.051041" rms="0.009434"/>
+				</waveblock>
+				<waveblock start="462045">
+					<simpleblockfile filename="e0000775.au" len="262144" min="-0.050001" max="0.054721" rms="0.012366"/>
+				</waveblock>
+				<waveblock start="724189">
+					<simpleblockfile filename="e0000503.au" len="262144" min="-0.092683" max="0.101886" rms="0.021126"/>
+				</waveblock>
+				<waveblock start="986333">
+					<simpleblockfile filename="e0000e23.au" len="262144" min="-0.103442" max="0.10473" rms="0.02462"/>
+				</waveblock>
+				<waveblock start="1248477">
+					<simpleblockfile filename="e0000788.au" len="262144" min="-0.130897" max="0.13854" rms="0.035536"/>
+				</waveblock>
+				<waveblock start="1510621">
+					<simpleblockfile filename="e0000684.au" len="262144" min="-0.177502" max="0.178702" rms="0.046423"/>
+				</waveblock>
+				<waveblock start="1772765">
+					<simpleblockfile filename="e0000e40.au" len="177076" min="-0.250107" max="0.236863" rms="0.053193"/>
+				</waveblock>
+				<waveblock start="1949841">
+					<simpleblockfile filename="e00004df.au" len="177077" min="-0.275846" max="0.285102" rms="0.070194"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="171445">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000a7c.au" len="39718" min="-0.127884" max="0.143687" rms="0.029615"/>
+				</waveblock>
+				<waveblock start="39718">
+					<simpleblockfile filename="e00006da.au" len="131727" min="-0.153602" max="0.140509" rms="0.01803"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="96466__imitatia-dei__rev-spaceship-drone-full-wet-resample-3-deep" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2298363">
+				<waveblock start="0">
+					<simpleblockfile filename="e00004c7.au" len="204123" min="-0.214182" max="0.228462" rms="0.053608"/>
+				</waveblock>
+				<waveblock start="204123">
+					<simpleblockfile filename="e0000060.au" len="262144" min="-0.203204" max="0.198872" rms="0.054792"/>
+				</waveblock>
+				<waveblock start="466267">
+					<simpleblockfile filename="e0000bdb.au" len="262144" min="-0.21677" max="0.212534" rms="0.068743"/>
+				</waveblock>
+				<waveblock start="728411">
+					<simpleblockfile filename="e0000db2.au" len="262144" min="-0.116575" max="0.117066" rms="0.035974"/>
+				</waveblock>
+				<waveblock start="990555">
+					<simpleblockfile filename="e0000f29.au" len="262144" min="-0.105232" max="0.099581" rms="0.03058"/>
+				</waveblock>
+				<waveblock start="1252699">
+					<simpleblockfile filename="e000026b.au" len="262144" min="-0.081892" max="0.086022" rms="0.023015"/>
+				</waveblock>
+				<waveblock start="1514843">
+					<simpleblockfile filename="e00003eb.au" len="262144" min="-0.070667" max="0.059606" rms="0.014953"/>
+				</waveblock>
+				<waveblock start="1776987">
+					<simpleblockfile filename="e0000ed9.au" len="262144" min="-0.050155" max="0.054996" rms="0.013147"/>
+				</waveblock>
+				<waveblock start="2039131">
+					<simpleblockfile filename="e0000440.au" len="259232" min="-0.010741" max="0.015386" rms="0.002565"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="96466__imitatia-dei__rev-spaceship-drone-full-wet-resample-3-deep" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2298363">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000deb.au" len="204123" min="-0.417552" max="0.431519" rms="0.08423"/>
+				</waveblock>
+				<waveblock start="204123">
+					<simpleblockfile filename="e0000c62.au" len="262144" min="-0.302006" max="0.294707" rms="0.091638"/>
+				</waveblock>
+				<waveblock start="466267">
+					<simpleblockfile filename="e000024b.au" len="262144" min="-0.266642" max="0.248801" rms="0.090203"/>
+				</waveblock>
+				<waveblock start="728411">
+					<simpleblockfile filename="e0000e3d.au" len="262144" min="-0.224617" max="0.235431" rms="0.087374"/>
+				</waveblock>
+				<waveblock start="990555">
+					<simpleblockfile filename="e000085a.au" len="262144" min="-0.104623" max="0.154829" rms="0.030399"/>
+				</waveblock>
+				<waveblock start="1252699">
+					<simpleblockfile filename="e000032b.au" len="262144" min="-0.106019" max="0.095272" rms="0.031306"/>
+				</waveblock>
+				<waveblock start="1514843">
+					<simpleblockfile filename="e0000632.au" len="262144" min="-0.072965" max="0.071885" rms="0.016122"/>
+				</waveblock>
+				<waveblock start="1776987">
+					<simpleblockfile filename="e0000de8.au" len="262144" min="-0.040122" max="0.040234" rms="0.0128"/>
+				</waveblock>
+				<waveblock start="2039131">
+					<simpleblockfile filename="e00005ba.au" len="259232" min="-0.012164" max="0.012059" rms="0.003069"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="96466__imitatia-dei__rev-spaceship-drone-full-wet-resample-3-deep" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="4.45625850">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2101842">
+				<waveblock start="0">
+					<simpleblockfile filename="e00000b4.au" len="161076" min="-0.009633" max="0.010812" rms="0.002357"/>
+				</waveblock>
+				<waveblock start="161076">
+					<simpleblockfile filename="e00007de.au" len="161076" min="-0.050155" max="0.054996" rms="0.012187"/>
+				</waveblock>
+				<waveblock start="322152">
+					<simpleblockfile filename="e0000c06.au" len="262144" min="-0.042108" max="0.042869" rms="0.010806"/>
+				</waveblock>
+				<waveblock start="584296">
+					<simpleblockfile filename="e000033c.au" len="262144" min="-0.070667" max="0.074031" rms="0.019238"/>
+				</waveblock>
+				<waveblock start="846440">
+					<simpleblockfile filename="e00009b4.au" len="262144" min="-0.084387" max="0.086022" rms="0.027607"/>
+				</waveblock>
+				<waveblock start="1108584">
+					<simpleblockfile filename="e0000bff.au" len="262144" min="-0.105232" max="0.099581" rms="0.030127"/>
+				</waveblock>
+				<waveblock start="1370728">
+					<simpleblockfile filename="e0000ec0.au" len="262144" min="-0.194586" max="0.212534" rms="0.059963"/>
+				</waveblock>
+				<waveblock start="1632872">
+					<simpleblockfile filename="e0000951.au" len="262144" min="-0.21677" max="0.18" rms="0.057412"/>
+				</waveblock>
+				<waveblock start="1895016">
+					<simpleblockfile filename="e0000ba9.au" len="206826" min="-0.214182" max="0.228462" rms="0.055797"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="196521">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000757.au" len="55318" min="-0.195652" max="0.183856" rms="0.065145"/>
+				</waveblock>
+				<waveblock start="55318">
+					<simpleblockfile filename="e0000caf.au" len="141203" min="-0.160003" max="0.163327" rms="0.02369"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="96466__imitatia-dei__rev-spaceship-drone-full-wet-resample-3-deep" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="4.45625850">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2101842">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000b06.au" len="161076" min="-0.012164" max="0.011476" rms="0.002892"/>
+				</waveblock>
+				<waveblock start="161076">
+					<simpleblockfile filename="e0000a0a.au" len="161076" min="-0.040122" max="0.040234" rms="0.011564"/>
+				</waveblock>
+				<waveblock start="322152">
+					<simpleblockfile filename="e0000ac3.au" len="262144" min="-0.045389" max="0.047311" rms="0.012346"/>
+				</waveblock>
+				<waveblock start="584296">
+					<simpleblockfile filename="e000031d.au" len="262144" min="-0.096551" max="0.086626" rms="0.027093"/>
+				</waveblock>
+				<waveblock start="846440">
+					<simpleblockfile filename="e0000f5b.au" len="262144" min="-0.106019" max="0.095272" rms="0.027351"/>
+				</waveblock>
+				<waveblock start="1108584">
+					<simpleblockfile filename="e00009c6.au" len="262144" min="-0.162998" max="0.163834" rms="0.054122"/>
+				</waveblock>
+				<waveblock start="1370728">
+					<simpleblockfile filename="e00006f0.au" len="262144" min="-0.224617" max="0.235431" rms="0.082301"/>
+				</waveblock>
+				<waveblock start="1632872">
+					<simpleblockfile filename="e0000662.au" len="262144" min="-0.26906" max="0.248801" rms="0.100486"/>
+				</waveblock>
+				<waveblock start="1895016">
+					<simpleblockfile filename="e00002e1.au" len="206826" min="-0.417552" max="0.431519" rms="0.105738"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="196521">
+				<waveblock start="0">
+					<simpleblockfile filename="e000052d.au" len="55318" min="-0.157661" max="0.156313" rms="0.045289"/>
+				</waveblock>
+				<waveblock start="55318">
+					<simpleblockfile filename="e0000202.au" len="141203" min="-0.135653" max="0.125084" rms="0.021509"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

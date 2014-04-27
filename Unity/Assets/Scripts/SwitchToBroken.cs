@@ -5,6 +5,7 @@ public class SwitchToBroken : MonoBehaviour {
 	public GameObject failingShip;
 	public GameObject brokenShip;
 	public Light spot;
+	public AudioClip crash;
 	private float counter;
 	private bool isBroken;
 
@@ -28,6 +29,8 @@ public class SwitchToBroken : MonoBehaviour {
 			isBroken = true;
 			failingShip.renderer.enabled = false;
 			brokenShip.renderer.enabled = true;
+			audio.clip = crash;
+			audio.Play();
 		}
 	}
 }
