@@ -85,6 +85,22 @@ ModelImporter:
     4300026: pCylinder12
     4300028: pCube4
     4300030: pCylinder13
+    6400000: pCube1
+    6400002: pCube2
+    6400004: pCube3
+    6400006: pCube4
+    6400008: pCylinder1
+    6400010: pCylinder11
+    6400012: pCylinder12
+    6400014: pCylinder13
+    6400016: pCylinder2
+    6400018: pCylinder3
+    6400020: pCylinder5
+    6400022: pCylinder6
+    6400024: pCylinder8
+    6400026: pCylinder9
+    6400028: pTorus1
+    6400030: pTorus3
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -104,12 +120,12 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: .300000012
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1
