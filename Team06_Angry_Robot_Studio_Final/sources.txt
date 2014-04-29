@@ -4,5 +4,10 @@ http://www.freesfx.co.uk/sfx/spaceship
 various SFX
 http://www.freesound.org/
 
-all textures
+black/metal textures
+http://www.psdgraphics.com/textures/metal-textures/
+tileable photoshop metal holes pattern
+http://s0nkite.deviantart.com/art/SK-Metal-Grids-HD-Patterns-188624389
+
+all other textures
 http://cgtextures.com/
