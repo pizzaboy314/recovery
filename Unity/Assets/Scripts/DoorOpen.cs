@@ -2,6 +2,10 @@
 using System.Collections;
 
 public class DoorOpen : MonoBehaviour {
+
+	public AudioClip doorOpen;
+	public AudioClip doorClose;
+
 	private int countInRegion;
 	private float timeForAnimation = 0.7f;
 	private float maxDelta = 0.8f;
@@ -45,9 +49,13 @@ public class DoorOpen : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col){
 		++countInRegion;
+		audio.clip = doorOpen;
+		audio.Play ();
 	}
 	
 	void OnTriggerExit(Collider col){
 		--countInRegion;
+		audio.clip = doorClose;
+		audio.Play ();
 	}
 }
