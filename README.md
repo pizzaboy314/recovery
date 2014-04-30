@@ -1,4 +1,4 @@
-Team06
+Team06: Angry Robot Studio
 ======
 
 Game Title: Recovery
