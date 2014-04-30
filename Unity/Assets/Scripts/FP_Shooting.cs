@@ -65,6 +65,9 @@ public class FP_Shooting : MonoBehaviour {
 				if(hitInfo.collider.tag == "ThermalDet"){
 					thermal_det script = hitInfo.collider.GetComponent<thermal_det>();
 					script.Explode();
+				} else if(hitInfo.collider.tag == "Enemy"){
+					GameObject en = hitInfo.collider.gameObject;
+					en.SendMessageUpwards("Shot");
 				}
 
 				Vector3 hitPoint = hitInfo.point;

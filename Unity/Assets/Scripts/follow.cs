@@ -5,7 +5,7 @@ namespace RobotAI
 {
 		public class follow : MonoBehaviour
 		{
-				public GameObject toFollow;
+				public GameObject toFollow = null;
 				public Vector3 toFollowPath;
 				public float maxPathSpeedFactor = 0.6f;
 				public float maxFollowSpeedFactor = 1.0f;
@@ -33,6 +33,8 @@ namespace RobotAI
 						ani = GetComponent<Animator> ();
 						foundPlayer = false;//TODO
 						lastXAng = 0;
+						if (toFollow == null)
+							toFollow = GameObject.Find("Player");
 						/*
 						minSpeedDisPath = 0.4f;
 						minSpeedDisFollow = 0.18f;
