@@ -43,8 +43,8 @@ public class PlayerHealthBarScript : MonoBehaviour {
 		GUI.Label (new Rect(pos.x+5, pos.y+15, size.x, size.y), healthval);
 
 		ammoval = (showGUI == true) ? "" + FP_Shooting.numDets : "";
-		GUI.Label (new Rect(2*(Screen.width/3)-20, pos.y-20, size.x, size.y), ammotext);
-		GUI.Label (new Rect(2*(Screen.width/3)-20, pos.y+15, size.x, size.y), ammoval);
+		GUI.Label (new Rect(2*(Screen.width/3)-60, pos.y-20, size.x, size.y), ammotext);
+		GUI.Label (new Rect(2*(Screen.width/3)-60, pos.y+15, size.x, size.y), ammoval);
 	}
 	
 	void Update()
