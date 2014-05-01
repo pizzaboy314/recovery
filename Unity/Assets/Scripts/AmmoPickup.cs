@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using shooting;
 using System.Collections;
 
 public class AmmoPickup : MonoBehaviour {
@@ -17,6 +18,9 @@ public class AmmoPickup : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
+		if (FP_Shooting.numDets + detsToAdd <= FP_Shooting.maxDets) {
+			audio.Play();
+		}
 		player.SendMessage ("addDets", detsToAdd);
 	}
 }

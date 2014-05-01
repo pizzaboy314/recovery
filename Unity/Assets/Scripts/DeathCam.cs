@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using shooting;
 using System.Collections;
 
 public class DeathCam : MonoBehaviour {
@@ -40,7 +41,7 @@ public class DeathCam : MonoBehaviour {
 			player.SendMessage("toggleGUI");
 			player.GetComponent<FirstPersonController2>().enabled = true;
 			player.GetComponent<MouseRotator>().enabled = true;
-			player.GetComponent<FP_Shooting>().enabled = true;
+			player.GetComponent<shooting.FP_Shooting>().enabled = true;
 			player.GetComponent<HeadBob>().enabled = true;
 			Screen.showCursor = false; 
 			Destroy(gameObject);
