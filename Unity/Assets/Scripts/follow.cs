@@ -21,6 +21,8 @@ namespace RobotAI
 				private Animator ani;
 				private float lastDis;
 				private float lastXAng;
+				private float closeTurnRate;
+				private float farTurnRate;
 				private bool foundPlayer;
 				private bool isPunching;
 				public WaypointProgressTracker trker;
@@ -35,6 +37,8 @@ namespace RobotAI
 						lastXAng = 0;
 						if (toFollow == null)
 							toFollow = GameObject.Find("Player");
+						closeTurnRate = 0.08f;
+						farTurnRate = 0.2f;
 						/*
 						minSpeedDisPath = 0.4f;
 						minSpeedDisFollow = 0.18f;
@@ -57,12 +61,12 @@ namespace RobotAI
 						//Debug.Log ("L:" + angle.x);
 						//if (Mathf.Abs(lastXAng - angle.x) > 1)
 						if (s < 0.3){//if close, turn faster
-								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f));
-								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f);
+								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, closeTurnRate));
+								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, closeTurnRate);
 						}
 						else{//if close, turn faster
-								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.02f));
-								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f);
+								ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, farTurnRate));
+								lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, farTurnRate);
 						}
 						//else
 						//	ani.SetFloat("Turn", s);
@@ -113,12 +117,12 @@ namespace RobotAI
 					//Debug.Log ("L:" + angle.x);
 					//if (Mathf.Abs(lastXAng - angle.x) > 1)
 					if (s < 0.3){//if close, turn faster
-							ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f));
-							lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.03f);
+							ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, closeTurnRate));
+							lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, closeTurnRate);
 					}
 					else{//if close, turn faster
-							ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f));
-							lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, 0.2f);
+							ani.SetFloat ("Turn", Mathf.Lerp (lastXAng, angle.x / Mathf.PI, farTurnRate));
+							lastXAng = Mathf.Lerp (lastXAng, angle.x / Mathf.PI, farTurnRate);
 					}
 					//else
 					//	ani.SetFloat("Turn", s);

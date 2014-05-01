@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class BotInteraction : MonoBehaviour {
+	public int hitPoint;
 	Animator rt;
 
 	// Use this for initialization
@@ -16,11 +17,13 @@ public class BotInteraction : MonoBehaviour {
 
 	public void Shot(){
 		//TODO implement HP, prevent further interation in punching
-		rt.enabled = false;
+		if (hitPoint < 0)
+			rt.enabled = false;
+		else --hitPoint;
 	}
 
 	private IEnumerator resetStumble(){
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(0.4f);
 		rt.SetBool("PlainStumble", false);
 	}
 

@@ -1258,7 +1258,7 @@ GameObject:
   - 95: {fileID: 32100913}
   m_Layer: 0
   m_Name: wallpanel1
-  m_TagString: Level
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1330,7 +1330,7 @@ Transform:
   m_GameObject: {fileID: 32100912}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
   m_LocalPosition: {x: 39.255867, y: 2.48222494, z: 69.3490982}
-  m_LocalScale: {x: 1, y: 1, z: .5}
+  m_LocalScale: {x: .600000024, y: .600000024, z: .300000012}
   m_Children: []
   m_Father: {fileID: 513615449}
 --- !u!1 &34421275
@@ -4592,7 +4592,7 @@ GameObject:
   - 95: {fileID: 182621768}
   m_Layer: 0
   m_Name: wallpanel1
-  m_TagString: Level
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4664,7 +4664,7 @@ Transform:
   m_GameObject: {fileID: 182621767}
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
   m_LocalPosition: {x: 39.255867, y: 2.48222494, z: 74.6423492}
-  m_LocalScale: {x: 1, y: 1, z: .5}
+  m_LocalScale: {x: .600000024, y: .600000024, z: .300000012}
   m_Children: []
   m_Father: {fileID: 513615449}
 --- !u!1 &185057499
@@ -6368,7 +6368,7 @@ GameObject:
   - 23: {fileID: 261744990}
   m_Layer: 0
   m_Name: dirt1
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6381,7 +6381,7 @@ Transform:
   m_GameObject: {fileID: 261744988}
   m_LocalRotation: {x: -.425177962, y: -.42517814, z: -.564998806, w: .564998806}
   m_LocalPosition: {x: 12.0682507, y: 1.45159316, z: 36.6119385}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalScale: {x: .25, y: .25, z: .25}
   m_Children: []
   m_Father: {fileID: 513615449}
 --- !u!23 &261744990
@@ -6670,7 +6670,7 @@ GameObject:
   - 23: {fileID: 270294160}
   m_Layer: 0
   m_Name: dirt1
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6683,7 +6683,7 @@ Transform:
   m_GameObject: {fileID: 270294158}
   m_LocalRotation: {x: .0966213346, y: -.69983995, z: -.700474322, w: .101114266}
   m_LocalPosition: {x: 16.7428112, y: 1.03262007, z: 28.6109295}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalScale: {x: .25, y: .25, z: .25}
   m_Children: []
   m_Father: {fileID: 513615449}
 --- !u!23 &270294160
@@ -10180,6 +10180,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 77d23c0d83c356d438d44b49f41071fb, type: 2}
+      propertyPath: hitPoint
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77d23c0d83c356d438d44b49f41071fb, type: 2}
   m_RootGameObject: {fileID: 495200809}
@@ -10892,6 +10896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e35f84eae321b499daab0ce7be42d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitPoint: 10
 --- !u!82 &495200812
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17503,7 +17508,7 @@ GameObject:
   - 23: {fileID: 859969983}
   m_Layer: 0
   m_Name: dirt1
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -17516,7 +17521,7 @@ Transform:
   m_GameObject: {fileID: 859969981}
   m_LocalRotation: {x: .5, y: .5, z: -.5, w: .5}
   m_LocalPosition: {x: 12.0682507, y: 2.51735711, z: 29.5189953}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalScale: {x: .25, y: .25, z: .25}
   m_Children: []
   m_Father: {fileID: 513615449}
 --- !u!23 &859969983
@@ -17982,7 +17987,7 @@ GameObject:
   - 23: {fileID: 879273552}
   m_Layer: 0
   m_Name: dirt1
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -17995,7 +18000,7 @@ Transform:
   m_GameObject: {fileID: 879273550}
   m_LocalRotation: {x: .000172011583, y: -.707106829, z: -.707106709, w: .000172136046}
   m_LocalPosition: {x: 13.6881981, y: 2.51668072, z: 28.5968571}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalScale: {x: .25, y: .25, z: .25}
   m_Children: []
   m_Father: {fileID: 513615449}
 --- !u!23 &879273552
@@ -26506,7 +26511,7 @@ GameObject:
   - 95: {fileID: 1280544561}
   m_Layer: 0
   m_Name: wallpanel1
-  m_TagString: Level
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -26578,7 +26583,7 @@ Transform:
   m_GameObject: {fileID: 1280544560}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
   m_LocalPosition: {x: 30.857872, y: 2.48222494, z: 69.3490982}
-  m_LocalScale: {x: .75, y: 1, z: .5}
+  m_LocalScale: {x: .75, y: .600000024, z: .300000012}
   m_Children: []
   m_Father: {fileID: 513615449}
 --- !u!1 &1282654243
@@ -38361,7 +38366,7 @@ GameObject:
   - 95: {fileID: 1914570940}
   m_Layer: 0
   m_Name: wallpanel1
-  m_TagString: Level
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -38433,7 +38438,7 @@ Transform:
   m_GameObject: {fileID: 1914570939}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
   m_LocalPosition: {x: 34.791954, y: 2.48222494, z: 69.3490982}
-  m_LocalScale: {x: 1, y: 1, z: .5}
+  m_LocalScale: {x: .600000024, y: .600000024, z: .300000012}
   m_Children: []
   m_Father: {fileID: 513615449}
 --- !u!1 &1917272033
@@ -39416,7 +39421,7 @@ GameObject:
   - 23: {fileID: 1944632092}
   m_Layer: 0
   m_Name: dirt1
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -39473,7 +39478,7 @@ Transform:
   m_GameObject: {fileID: 1944632091}
   m_LocalRotation: {x: .5, y: .5, z: -.5, w: .5}
   m_LocalPosition: {x: 12.0682507, y: 2.51735711, z: 39.3751678}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalScale: {x: .25, y: .25, z: .25}
   m_Children: []
   m_Father: {fileID: 513615449}
 --- !u!1 &1949149531

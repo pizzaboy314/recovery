@@ -39,8 +39,8 @@ namespace RobotAI
 				Transform[] pts = c.Waypoints;
 				float dis  = Vector3.Distance(c.Waypoints[0].position, pt);
 				for (i = 1; i < l; ++i){
-					if (Vector3.Distance(c.Waypoints[0].position, pt) < dis){
-						dis = Vector3.Distance(c.Waypoints[0].position, pt);
+					if (Vector3.Distance(c.Waypoints[i].position, pt) < dis){
+						dis = Vector3.Distance(c.Waypoints[i].position, pt);
 					}
 				}
 				return dis;
