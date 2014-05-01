@@ -6,6 +6,8 @@ public class DoorOpen : MonoBehaviour {
 	public AudioClip doorOpen;
 	public AudioClip doorClose;
 
+	private bool isParented;
+	private Vector3 parentStartPos;
 	private int countInRegion;
 	private float timeForAnimation = 0.7f;
 	private float maxDelta = 0.8f;
@@ -28,6 +30,11 @@ public class DoorOpen : MonoBehaviour {
 			else
 				otherSide = t;
 		}
+		isParented = false;
+		if (transform.parent != null){
+			parentStartPos = transform.parent.transform.position;
+			isParented = true;
+		}
 		oneStart = oneSide.position;
 		otherStart = otherSide.position;
 		otherToOneUnit = (oneSide.position - otherSide.position).normalized;
@@ -40,11 +47,16 @@ public class DoorOpen : MonoBehaviour {
 			timeInAni += Time.deltaTime;
 		}else if (countInRegion <= 0 && timeInAni > 0){
 			timeInAni -= Time.deltaTime;
+			if (timeInAni < 0)
+				timeInAni = 0;
 		}
+		Vector3 deltaPar = Vector3.zero;
+		if (isParented)
+			deltaPar = transform.parent.position - parentStartPos;
 		oneSide.position = oneStart + (timeInAni / timeForAnimation) *
-			maxDelta * otherToOneUnit;
+			maxDelta * otherToOneUnit + deltaPar;
 		otherSide.position = otherStart + (timeInAni / timeForAnimation) *
-			maxDelta * oneToOtherUnit;
+			maxDelta * oneToOtherUnit + deltaPar;
 	}
 
 	void OnTriggerEnter(Collider col){
