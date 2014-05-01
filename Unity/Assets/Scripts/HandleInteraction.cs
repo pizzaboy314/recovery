@@ -58,4 +58,20 @@ public class HandleInteraction : MonoBehaviour {
 		damage = 0f;
 		currHealth = maxHealth - damage;
 	}
+	public void addDamage(float n){
+		if(damage + n <= maxHealth){
+			damage += n;
+			currHealth = maxHealth - damage;
+		} else if (damage + n > maxHealth){
+			damage = maxHealth;
+			currHealth = maxHealth - damage;
+		}
+
+		if(damage >= maxHealth){
+			SendMessage ("toggleGUI");
+			killCam(gameObject.transform.position);
+			spotlight.SendMessage("resetPulsation");
+			reset();
+		}
+	}
 }

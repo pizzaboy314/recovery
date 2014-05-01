@@ -28,6 +28,7 @@ public class det_explode_fire : MonoBehaviour {
 				RenderSettings.fogDensity = fogDensity;
 				RenderSettings.fogColor = Color.black;
 			}
+
 			Destroy(gameObject);
 		}
 	}

@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class BotInteraction : MonoBehaviour {
-	public int hitPoint;
+	public float maxHealth;
+	public float currHealth;
+	private float damage = 0f;
 	Animator rt;
 
 	// Use this for initialization
@@ -17,9 +19,9 @@ public class BotInteraction : MonoBehaviour {
 
 	public void Shot(){
 		//TODO implement HP, prevent further interation in punching
-		if (hitPoint < 0)
+		if (currHealth < 0f)
 			rt.enabled = false;
-		else --hitPoint;
+		else --currHealth;
 	}
 
 	private IEnumerator resetStumble(){
@@ -33,6 +35,18 @@ public class BotInteraction : MonoBehaviour {
 		if (other.gameObject.tag == "ThermalDet"){
 			rt.SetBool("PlainStumble", true);
 			StartCoroutine(resetStumble());
+		}
+	}
+	public void addDamage(float n){
+		if(damage + n <= maxHealth){
+			damage += n;
+			currHealth = maxHealth - damage;
+		} else if (damage + n > maxHealth){
+			damage = maxHealth;
+			currHealth = maxHealth - damage;
+		}
+		if (currHealth <= 0f){
+			rt.enabled = false;
 		}
 	}
 }
