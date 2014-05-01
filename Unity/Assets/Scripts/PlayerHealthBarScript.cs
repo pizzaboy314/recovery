@@ -18,6 +18,8 @@ public class PlayerHealthBarScript : MonoBehaviour {
 	private Texture2D fullTexTMP;
 
 	private bool showGUI = true;
+	private string healthtext = "HEALTH";
+	private string healthval = "";
 	
 	void OnGUI()
 	{
@@ -33,6 +35,10 @@ public class PlayerHealthBarScript : MonoBehaviour {
 		
 		GUI.EndGroup();
 		GUI.EndGroup();
+
+		healthval = (showGUI == true) ? "" + HandleInteraction.currHealth : "";
+		GUI.Label (new Rect(pos.x, pos.y-20, size.x, size.y), healthtext);
+		GUI.Label (new Rect(pos.x+5, pos.y+15, size.x, size.y), healthval);
 	}
 	
 	void Update()
@@ -48,12 +54,14 @@ public class PlayerHealthBarScript : MonoBehaviour {
 			fullTexTMP = fullTex;
 			emptyTex = null;
 			fullTex = null;
+			healthtext = "";
 		} else {
 			showGUI = true;
 			emptyTex = emptyTexTMP;
 			fullTex = fullTexTMP;
 			emptyTexTMP = null;
 			fullTexTMP = null;
+			healthtext = "HEALTH";
 		}
 	}
 
