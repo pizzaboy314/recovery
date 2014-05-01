@@ -83,6 +83,7 @@ ModelImporter:
     6400020: pCylinder7
     6400022: pCylinder8
     6400024: pCylinder9
+    7400000: Default Take
     9500000: //RootNode
   materials:
     importMaterials: 1
