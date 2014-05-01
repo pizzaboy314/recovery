@@ -168,7 +168,7 @@ namespace RobotAI
 				// Update is called once per frame
 				void Update ()
 				{
-					if (foundPlayer) {
+					if (foundPlayer == true && isPunching == true) {
 						moveUpdate();
 						periodicTaunt();
 					} else {

@@ -8,12 +8,8 @@ public class HandleInteraction : MonoBehaviour {
 	public GameObject deathCam;
 	public Camera mainCam;
 
-	public Texture2D green;
-	public Texture2D yellow;
-	public Texture2D red;
-
-	public float maxHealth = 10f;
-	private float currHealth;
+	public static float maxHealth = 10f;
+	public static float currHealth = 10f;
 	private float damage = 0f;
 	private bool lightPulsing;
 
@@ -36,6 +32,7 @@ public class HandleInteraction : MonoBehaviour {
 		}
 		damage++;
 		if(damage >= maxHealth){
+			SendMessage ("toggleGUI");
 			killCam(from);
 			spotlight.SendMessage("resetPulsation");
 			reset();
@@ -55,7 +52,10 @@ public class HandleInteraction : MonoBehaviour {
 	}
 	public void reset(){
 		lightPulsing = false;
-		damage = 0f;
 		transform.position = spawnLoc.transform.position;
+	}
+	public void resetHealth(){
+		damage = 0f;
+		currHealth = maxHealth - damage;
 	}
 }

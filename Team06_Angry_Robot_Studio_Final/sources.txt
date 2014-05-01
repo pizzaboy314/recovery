@@ -13,3 +13,6 @@ http://eps-ai.blogspot.com/2012/03/vector-metal-texture.html
 
 all other textures
 http://cgtextures.com/
+
+gui health bar code
+http://answers.unity3d.com/questions/17255/how-do-i-make-a-health-bar.html
