@@ -20,6 +20,8 @@ public class PlayerHealthBarScript : MonoBehaviour {
 	private bool showGUI = true;
 	private string healthtext = "HEALTH";
 	private string healthval = "";
+	private string ammotext = "GRENADES";
+	private string ammoval = "";
 	
 	void OnGUI()
 	{
@@ -39,6 +41,10 @@ public class PlayerHealthBarScript : MonoBehaviour {
 		healthval = (showGUI == true) ? "" + HandleInteraction.currHealth : "";
 		GUI.Label (new Rect(pos.x, pos.y-20, size.x, size.y), healthtext);
 		GUI.Label (new Rect(pos.x+5, pos.y+15, size.x, size.y), healthval);
+
+		ammoval = (showGUI == true) ? "" + FP_Shooting.numDets : "";
+		GUI.Label (new Rect(2*(Screen.width/3)-20, pos.y-20, size.x, size.y), ammotext);
+		GUI.Label (new Rect(2*(Screen.width/3)-20, pos.y+15, size.x, size.y), ammoval);
 	}
 	
 	void Update()
@@ -55,6 +61,7 @@ public class PlayerHealthBarScript : MonoBehaviour {
 			emptyTex = null;
 			fullTex = null;
 			healthtext = "";
+			ammotext = "";
 		} else {
 			showGUI = true;
 			emptyTex = emptyTexTMP;
@@ -62,6 +69,7 @@ public class PlayerHealthBarScript : MonoBehaviour {
 			emptyTexTMP = null;
 			fullTexTMP = null;
 			healthtext = "HEALTH";
+			ammotext = "GRENADES";
 		}
 	}
 

@@ -4,6 +4,8 @@ using System.Collections;
 public class FP_Shooting : MonoBehaviour {
 
 	public GameObject thermal_det;
+	public static float maxDets = 10f;
+	public static float numDets = 10f;
 	public float detImpulse;
 
 	public GameObject debrisPrefab;
@@ -25,6 +27,8 @@ public class FP_Shooting : MonoBehaviour {
 	private float animDist;
 	private float animDrawSpeed = 0.2f;
 	private bool firing;
+
+	public AudioClip ammoSound;
 	
 
 	// Use this for initialization
@@ -109,9 +113,19 @@ public class FP_Shooting : MonoBehaviour {
 		}
 
 		if (Input.GetButtonDown("Fire2")){
-			Camera cam = Camera.main;
-			GameObject det = (GameObject)Instantiate(thermal_det, cam.transform.position + cam.transform.forward, cam.transform.rotation);
-			det.rigidbody.AddForce(cam.transform.forward * detImpulse, ForceMode.Impulse);
+			if(numDets > 0){
+				Camera cam = Camera.main;
+				GameObject det = (GameObject)Instantiate(thermal_det, cam.transform.position + cam.transform.forward, cam.transform.rotation);
+				det.rigidbody.AddForce(cam.transform.forward * detImpulse, ForceMode.Impulse);
+				numDets--;
+			}
+		}
+	}
+	public void addDets(float n){
+		if (numDets + n <= maxDets) {
+			numDets += n;
+			audio.clip = ammoSound;
+			audio.Play();
 		}
 	}
 }
