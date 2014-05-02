@@ -3,6 +3,9 @@ using System.Collections;
 
 
 public class MoveUpBy : MonoBehaviour {
+	
+	public bool transportPlayer = false;
+
 	public bool isMoving = false;
 	public float distance = 1.0f;
 	public float timeToDest = 1.0f;
@@ -11,7 +14,11 @@ public class MoveUpBy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		startPos = transform.position;
+		startPos = transform.position + Vector3.down*distance;
+		if(transportPlayer == true){
+			GameObject player = GameObject.Find("Player");
+			player.transform.position += Vector3.down*distance;
+		}
 	}
 	
 	// Update is called once per frame

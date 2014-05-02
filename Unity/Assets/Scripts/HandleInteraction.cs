@@ -13,6 +13,8 @@ public class HandleInteraction : MonoBehaviour {
 	private float damage = 0f;
 	private bool lightPulsing;
 
+	public AudioClip[] hitSounds;
+
 	// Use this for initialization
 	void Start () {
 		lightPulsing = false;

@@ -6,6 +6,7 @@ public class PlayerHealthBarScript : MonoBehaviour {
 
 	public GUIStyle progress_empty;
 	public GUIStyle progress_full;
+	public Font digital;
 	
 	//current progress
 	public float barDisplay;
@@ -26,6 +27,7 @@ public class PlayerHealthBarScript : MonoBehaviour {
 	
 	void OnGUI()
 	{
+
 		//draw the background:
 		GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y), emptyTex, progress_empty);
 		
@@ -38,6 +40,11 @@ public class PlayerHealthBarScript : MonoBehaviour {
 		
 		GUI.EndGroup();
 		GUI.EndGroup();
+
+		//GUIStyle style = new GUIStyle(); //TODO find a way to make text white
+		//style.font = digital;
+		//style.fontSize = 16;
+		//style.fontStyle = FontStyle.Bold;
 
 		healthval = (showGUI == true) ? "" + HandleInteraction.currHealth : "";
 		GUI.Label (new Rect(pos.x, pos.y-20, size.x, size.y), healthtext);
