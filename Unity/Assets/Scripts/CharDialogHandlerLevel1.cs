@@ -12,4 +12,9 @@ public class CharDialogHandlerLevel1 : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	void playClip(AudioClip clip){
+		audio.clip = clip;
+		audio.Play ();
+	}
 }
