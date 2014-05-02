@@ -7,7 +7,7 @@ Genre: FPS Survival Horror
 
 Roles
 ======
-Bryan Spahr: 		team lead, character voice, music, coding, texturing, modeling, lighting, all level compilation
+Bryan Spahr: 		team lead, character voices, music, coding, texturing, modeling, lighting, all level compilation
 
 Shanon Mathai: 		coding, scripting, modeling, animations, bots, AI
 
@@ -17,4 +17,4 @@ Babak Shahian: 		object meshes
 
 Jessica Candebat: 	object meshes, wall panels
 
-Kylie Adkins: 		sketches
+Kylie Adkins: 		sketches, title screen
