@@ -5,8 +5,8 @@ namespace shooting {
 	public class FP_Shooting : MonoBehaviour {
 		
 		public GameObject thermal_det;
-		public static float maxDets = 10f;
-		public static float numDets = 10f;
+		public static float maxDets = 5f;
+		public static float numDets = 5f;
 		public float detImpulse;
 		
 		public GameObject debrisPrefab;
