@@ -1152,6 +1152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToPlay: {fileID: 8300000, guid: 0b0121390726b22439c8ff8060937af9, type: 3}
+  toDestroy: {fileID: 0}
+  playOnce: 0
 --- !u!1 &122429797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,10 +1489,17 @@ MonoBehaviour:
   spawnLoc: {fileID: 0}
   deathCam: {fileID: 0}
   mainCam: {fileID: 0}
-  green: {fileID: 0}
-  yellow: {fileID: 0}
-  red: {fileID: 0}
-  maxHealth: 10
+  hitSounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &141136859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1566,11 +1575,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caccec5907b82b94f8bfdf483a73362e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 20
+  runSpeed: 7
   strafeSpeed: 4
   jumpPower: 4
   walkByDefault: 1
-  walkSpeed: 6
+  walkSpeed: 5
   advanced:
     gravityMultiplier: 1
     zeroFrictionMaterial: {fileID: 0}
@@ -2967,7 +2976,7 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 6
+  m_LightmapIndex: 1
   m_LightmapTilingOffset: {x: .0126953125, y: .0126953125, z: .170848846, w: .937450409}
   m_Materials:
   - {fileID: 2100000, guid: b77ab5859fa793845ad268084b53150d, type: 2}
@@ -3795,7 +3804,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &346446813
 Transform:
@@ -3819,8 +3828,8 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 10
+  m_Intensity: .800000012
+  m_Range: 9
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -4793,7 +4802,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &455514757
 Transform:
@@ -4817,8 +4826,8 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 10
+  m_Intensity: .800000012
+  m_Range: 9
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -6321,7 +6330,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!108 &544331390
 Light:
@@ -6334,8 +6343,8 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 10
+  m_Intensity: .800000012
+  m_Range: 9
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7036,7 +7045,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &610458254
 Transform:
@@ -7060,8 +7069,8 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 10
+  m_Intensity: .800000012
+  m_Range: 9
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7123,7 +7132,7 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 6
+  m_LightmapIndex: 2
   m_LightmapTilingOffset: {x: .01171875, y: .01171875, z: .184524536, w: .960891724}
   m_Materials:
   - {fileID: 2100000, guid: b77ab5859fa793845ad268084b53150d, type: 2}
@@ -7622,7 +7631,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &661480248
 Transform:
@@ -7646,8 +7655,8 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 10
+  m_Intensity: .800000012
+  m_Range: 9
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -8214,7 +8223,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &709448809
 Transform:
@@ -8238,8 +8247,8 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 10
+  m_Intensity: .800000012
+  m_Range: 9
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -9410,6 +9419,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToPlay: {fileID: 8300000, guid: 9b9ac2235e74f7641afc84556b0b3cfc, type: 3}
+  toDestroy: {fileID: 0}
+  playOnce: 0
 --- !u!1 &849091208
 GameObject:
   m_ObjectHideFlags: 0
@@ -10443,7 +10454,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: 886761fdb5c2e3247b93e3c503c45590, type: 2}
       propertyPath: runSpeed
-      value: 20
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 13600000, guid: 886761fdb5c2e3247b93e3c503c45590, type: 2}
       propertyPath: m_Material
@@ -10468,6 +10479,10 @@ Prefab:
     - target: {fileID: 100000, guid: 886761fdb5c2e3247b93e3c503c45590, type: 2}
       propertyPath: m_Name
       value: Head Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 886761fdb5c2e3247b93e3c503c45590, type: 2}
+      propertyPath: walkSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8200000, guid: 886761fdb5c2e3247b93e3c503c45590, type: 2}
@@ -10900,7 +10915,7 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 6
+  m_LightmapIndex: 1
   m_LightmapTilingOffset: {x: .0263671875, y: .0263671875, z: .0370063782, w: .964740753}
   m_Materials:
   - {fileID: 2100000, guid: b77ab5859fa793845ad268084b53150d, type: 2}
@@ -12987,7 +13002,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1191946712
 Transform:
@@ -13011,8 +13026,8 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 10
+  m_Intensity: .800000012
+  m_Range: 9
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -13200,8 +13215,8 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 6
-  m_LightmapTilingOffset: {x: .01171875, y: .01171875, z: .209915161, w: .937454224}
+  m_LightmapIndex: 2
+  m_LightmapTilingOffset: {x: .01171875, y: .01171875, z: .209915161, w: .885696411}
   m_Materials:
   - {fileID: 2100000, guid: b77ab5859fa793845ad268084b53150d, type: 2}
   m_SubsetIndices: 
@@ -13951,7 +13966,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1388061349
 Transform:
@@ -13975,8 +13990,8 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 10
+  m_Intensity: .800000012
+  m_Range: 9
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -15937,7 +15952,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1617617339
 Transform:
@@ -15961,8 +15976,8 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 10
+  m_Intensity: .800000012
+  m_Range: 9
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -19084,6 +19099,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToPlay: {fileID: 8300000, guid: 37cb47233a866864594c12830be1016b, type: 3}
+  toDestroy: {fileID: 0}
+  playOnce: 0
 --- !u!1 &1971020516
 GameObject:
   m_ObjectHideFlags: 0
@@ -21006,8 +21023,8 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 6
-  m_LightmapTilingOffset: {x: .0205078125, y: .0205078125, z: .0926933289, w: .937419891}
+  m_LightmapIndex: 2
+  m_LightmapTilingOffset: {x: .0205078125, y: .0205078125, z: .526287079, w: .238201141}
   m_Materials:
   - {fileID: 2100000, guid: 75b4faf8fddb76542a37612e656c3e41, type: 2}
   m_SubsetIndices: 
