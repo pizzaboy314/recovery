@@ -107,7 +107,9 @@ namespace RobotAI
 					if (!punchExclusively){
 						pl.transform.parent = null;
 						Vector3 tmpV = (pl.transform.position - transform.position).normalized * 10;
+						//pl.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 						pl.rigidbody.velocity = new Vector3(tmpV.x, 0.0f, tmpV.z);
+						
 					}
 					isPunching = false;
 				}
@@ -156,7 +158,7 @@ namespace RobotAI
 									ani.SetFloat ("Forward", distanceFactor * maxFollowSpeedFactor);
 					} else {
 							ani.SetFloat ("Forward", 0);
-							if (!isPunching && s * 10.1f <= disToPlayer){//TODO tweek distancce
+							if (!isPunching && s * 10.1f > disToPlayer){//TODO tweek distancce
 								if (punchExclusively){
 									ani.SetBool ("Punching", true);
 									int atkHash = Animator.StringToHash("Base.Punch");
@@ -168,10 +170,12 @@ namespace RobotAI
 								}
 								else {
 									ani.SetBool ("Lifting", true);
+									//pl.rigidbody.constraints = RigidbodyConstraints.None;
 									pl.transform.LookAt (transform.position);
-									int atkHash = Animator.StringToHash("Base.lift");
+									int atkHash1 = Animator.StringToHash("Base.lift");
+									int atkHash2 = Animator.StringToHash("Base.toss");
 									int currentBaseState = ani.GetCurrentAnimatorStateInfo(0).nameHash;
-									if (currentBaseState == atkHash){
+									if (currentBaseState == atkHash1 || currentBaseState == atkHash2){
 										ani.SetBool ("Lifting", false);
 										StartCoroutine(waitForNextPunch());
 									}
