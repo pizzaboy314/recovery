@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 64: {fileID: 6400000}
   - 95: {fileID: 9500000}
+  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: floorpiece
   m_TagString: Object
@@ -25,8 +25,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 8.14603425e-08, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 122.346848, y: .8387447, z: -77.5108414}
+  m_LocalRotation: {x: 9.41569667e-08, y: .707106829, z: -9.41569667e-08, w: .707106829}
+  m_LocalPosition: {x: 143.470474, y: .679651082, z: 19.2318668}
   m_LocalScale: {x: .537010849, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,8 +39,8 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_LightmapIndex: 2
+  m_LightmapTilingOffset: {x: .15625, y: .15625, z: .315429688, w: .506835938}
   m_Materials:
   - {fileID: 2100000, guid: d09fb60b04404be40b9343668eb7c851, type: 2}
   - {fileID: 2100000, guid: 2d40aeddd5b8d5c478de6470a29bd3b1, type: 2}
@@ -59,8 +59,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 4300000, guid: c336565cc93c60c468bf70dc31dbf6fd, type: 3}
---- !u!64 &6400000
-MeshCollider:
+--- !u!65 &6500000
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -69,9 +69,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: c336565cc93c60c468bf70dc31dbf6fd, type: 3}
+  m_Size: {x: .731853485, y: 1.31726396, z: 2.27655029}
+  m_Center: {x: -2.75698316e-28, y: 9.32694914e-15, z: .164081484}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2

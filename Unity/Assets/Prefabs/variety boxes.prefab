@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 64: {fileID: 6400000}
   - 95: {fileID: 9500002}
+  - 136: {fileID: 13600000}
   m_Layer: 0
   m_Name: barrel
   m_TagString: Object
@@ -29,7 +29,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 33: {fileID: 3300002}
   - 23: {fileID: 2300002}
-  - 64: {fileID: 6400002}
+  - 65: {fileID: 6500002}
   m_Layer: 0
   m_Name: pCube2
   m_TagString: Untagged
@@ -47,7 +47,7 @@ GameObject:
   - 4: {fileID: 400004}
   - 33: {fileID: 3300004}
   - 23: {fileID: 2300004}
-  - 64: {fileID: 6400004}
+  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: pCube1
   m_TagString: Untagged
@@ -110,8 +110,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 147.416092, y: .188381657, z: -87.8597031}
+  m_LocalRotation: {x: 0, y: .5, z: 0, w: .866025388}
+  m_LocalPosition: {x: 114.768196, y: .198026702, z: -69.3845215}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -128,7 +128,7 @@ Renderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 3
-  m_LightmapTilingOffset: {x: .09375, y: .09375, z: .833007812, w: .4765625}
+  m_LightmapTilingOffset: {x: .0654296875, y: .0654296875, z: .92578125, w: .862304688}
   m_Materials:
   - {fileID: 2100000, guid: c1e4a9dabd4a913439c4a51eb08ab876, type: 2}
   m_SubsetIndices: 
@@ -148,8 +148,8 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_LightmapIndex: 2
+  m_LightmapTilingOffset: {x: .15625, y: .156250015, z: .151733398, w: .821655273}
   m_Materials:
   - {fileID: 2100000, guid: 91aa717bb08b11045a9cedfb1d790eb7, type: 2}
   - {fileID: 2100000, guid: 752f0517e0fd125458d8dbe6fc284668, type: 2}
@@ -170,8 +170,8 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_LightmapIndex: 5
+  m_LightmapTilingOffset: {x: .127929688, y: .127929688, z: .174304962, w: .597156525}
   m_Materials:
   - {fileID: 2100000, guid: 88efa5a231f470441989c9f97b06725f, type: 2}
   - {fileID: 2100000, guid: d09fb60b04404be40b9343668eb7c851, type: 2}
@@ -204,34 +204,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_Mesh: {fileID: 4300000, guid: 0d7e712fa55735a4aa5b9717a8c7519f, type: 3}
---- !u!64 &6400000
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 1f707bbbe3b1e884ca321c7d5027b2ab, type: 3}
---- !u!64 &6400002
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300002, guid: 0d7e712fa55735a4aa5b9717a8c7519f, type: 3}
---- !u!64 &6400004
-MeshCollider:
+--- !u!65 &6500000
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -240,9 +214,20 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 0d7e712fa55735a4aa5b9717a8c7519f, type: 3}
+  m_Size: {x: 1.20980084, y: .673649788, z: 1.4267472}
+  m_Center: {x: 0, y: -.0178192407, z: 0}
+--- !u!65 &6500002
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.76191425, y: .670692086, z: 1.4684031}
+  m_Center: {x: -.649889469, y: 0, z: 0}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
@@ -271,6 +256,19 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!136 &13600000
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .406869918
+  m_Height: 1.05680895
+  m_Direction: 1
+  m_Center: {x: 1.53034925e-05, y: .0182844698, z: 1.52140856e-05}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
