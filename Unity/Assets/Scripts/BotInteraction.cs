@@ -61,7 +61,8 @@ public class BotInteraction : MonoBehaviour {
 		}
 	}
 	public void playHitSound(){
-		chest.audio.clip = hitSounds[(int)damage-1];
+		int n = Random.Range(0,hitSounds.Length);
+		chest.audio.clip = hitSounds[n];
 		chest.audio.Play();
 	}
 }

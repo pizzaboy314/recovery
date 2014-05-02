@@ -10,6 +10,7 @@ public class DeathCam : MonoBehaviour {
 	private float maxDens = 1.0f;
 	private float startingDens;
 	private GameObject player;
+	private GameObject headCam;
 	private Camera cam;
 	private float startIntensity;
 	private float intensityFader;
@@ -17,6 +18,7 @@ public class DeathCam : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
+		headCam = GameObject.Find("Head Camera");
 		cam = GetComponent<Camera>();
 		startingDens = RenderSettings.fogDensity;
 		cam.enabled = true;
@@ -44,6 +46,7 @@ public class DeathCam : MonoBehaviour {
 			player.GetComponent<shooting.FP_Shooting>().enabled = true;
 			player.GetComponent<HeadBob>().enabled = true;
 			Screen.showCursor = false; 
+			headCam.SendMessage("playRespawnQuote");
 			Destroy(gameObject);
 		}
 	}
