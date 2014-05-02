@@ -22335,6 +22335,7 @@ GameObject:
   - 33: {fileID: 451381237}
   - 64: {fileID: 451381236}
   - 23: {fileID: 451381235}
+  - 114: {fileID: 451381238}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -22398,6 +22399,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1373700756}
   m_GameObject: {fileID: 451381233}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &451381238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 451381233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!1001 &451609425
 Prefab:
   m_ObjectHideFlags: 0
@@ -25285,6 +25300,7 @@ GameObject:
   - 4: {fileID: 511301498}
   - 33: {fileID: 511301501}
   - 23: {fileID: 511301499}
+  - 114: {fileID: 511301500}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -25326,6 +25342,20 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!114 &511301500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511301497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!33 &511301501
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -33473,6 +33503,7 @@ GameObject:
   - 4: {fileID: 699844153}
   - 33: {fileID: 699844156}
   - 23: {fileID: 699844154}
+  - 114: {fileID: 699844155}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -33514,6 +33545,20 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!114 &699844155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 699844152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!33 &699844156
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46577,6 +46622,7 @@ GameObject:
   - 4: {fileID: 1026684560}
   - 33: {fileID: 1026684563}
   - 23: {fileID: 1026684561}
+  - 114: {fileID: 1026684562}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -46618,6 +46664,20 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!114 &1026684562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1026684559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!33 &1026684563
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46694,6 +46754,7 @@ GameObject:
   - 4: {fileID: 1031428145}
   - 33: {fileID: 1031428148}
   - 23: {fileID: 1031428146}
+  - 114: {fileID: 1031428147}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -46735,6 +46796,20 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!114 &1031428147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031428144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!33 &1031428148
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -47195,6 +47270,7 @@ GameObject:
   - 33: {fileID: 1036425959}
   - 64: {fileID: 1036425958}
   - 23: {fileID: 1036425957}
+  - 114: {fileID: 1036425960}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -47258,6 +47334,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 896321874}
   m_GameObject: {fileID: 1036425955}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1036425960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1036425955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!1 &1036632033
 GameObject:
   m_ObjectHideFlags: 0
@@ -57504,6 +57594,7 @@ GameObject:
   - 4: {fileID: 1233947687}
   - 33: {fileID: 1233947690}
   - 23: {fileID: 1233947688}
+  - 114: {fileID: 1233947689}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -57545,6 +57636,20 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!114 &1233947689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1233947686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!33 &1233947690
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -80037,6 +80142,7 @@ GameObject:
   - 4: {fileID: 1711676131}
   - 33: {fileID: 1711676134}
   - 23: {fileID: 1711676132}
+  - 114: {fileID: 1711676133}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -80078,6 +80184,20 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!114 &1711676133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1711676130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!33 &1711676134
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -86015,6 +86135,7 @@ GameObject:
   - 33: {fileID: 1816913227}
   - 64: {fileID: 1816913226}
   - 23: {fileID: 1816913225}
+  - 114: {fileID: 1816913228}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -86078,6 +86199,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1401616486}
   m_GameObject: {fileID: 1816913223}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1816913228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1816913223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!1 &1817224656
 GameObject:
   m_ObjectHideFlags: 0
@@ -94596,6 +94731,7 @@ GameObject:
   - 33: {fileID: 1993651444}
   - 64: {fileID: 1993651443}
   - 23: {fileID: 1993651442}
+  - 114: {fileID: 1993651446}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -94659,6 +94795,20 @@ Transform:
   m_Children:
   - {fileID: 197238934}
   m_Father: {fileID: 573141016}
+--- !u!114 &1993651446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1993651441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!1 &2000342716
 GameObject:
   m_ObjectHideFlags: 0
@@ -98307,6 +98457,7 @@ GameObject:
   - 33: {fileID: 2077776155}
   - 64: {fileID: 2077776154}
   - 23: {fileID: 2077776153}
+  - 114: {fileID: 2077776156}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -98370,6 +98521,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1701889096}
   m_GameObject: {fileID: 2077776151}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2077776156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2077776151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!1 &2081193561
 GameObject:
   m_ObjectHideFlags: 0
@@ -99218,6 +99383,7 @@ GameObject:
   - 33: {fileID: 2098948724}
   - 64: {fileID: 2098948723}
   - 23: {fileID: 2098948722}
+  - 114: {fileID: 2098948725}
   m_Layer: 0
   m_Name: grateWithBlackBack
   m_TagString: Untagged
@@ -99281,6 +99447,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1200772969}
   m_GameObject: {fileID: 2098948720}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2098948725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2098948720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f33f7fb115e224ebac32b5cb870970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  distance: 4
+  timeToDest: 2
 --- !u!1 &2102858100
 GameObject:
   m_ObjectHideFlags: 0
@@ -99826,6 +100006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e7b0621fd34e644aa412a4d05de436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHand: {fileID: 0}
+  punchExclusively: 1
   toFollow: {fileID: 1472759503}
   toFollowPath: {x: 0, y: 0, z: 0}
   maxPathSpeedFactor: .600000024
