@@ -38,7 +38,7 @@ public class DeathCam : MonoBehaviour {
 		RenderSettings.fogDensity = Mathf.Lerp(startingDens, maxDens, curSpan / lifeSpan);
 		if(curSpan >= lifeSpan){
 			cam.enabled = false;
-			RenderSettings.fogDensity = startingDens;
+			RenderSettings.fogDensity = 0.2f;
 			player.SendMessage("resetHealth");
 			player.SendMessage("toggleGUI");
 			player.GetComponent<FirstPersonController2>().enabled = true;
