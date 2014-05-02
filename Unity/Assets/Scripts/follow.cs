@@ -29,6 +29,7 @@ namespace RobotAI
 				private float farTurnRate;
 				private bool foundPlayer;
 				private bool isPunching;
+				private bool isDead;
 				public WaypointProgressTracker trker;
 
 				// Use this for initialization
@@ -45,6 +46,7 @@ namespace RobotAI
 							toFollow = GameObject.Find("Player");
 						closeTurnRate = 0.08f;
 						farTurnRate = 0.2f;
+						isDead = false;
 						/*
 						minSpeedDisPath = 0.4f;
 						minSpeedDisFollow = 0.18f;
@@ -201,13 +203,16 @@ namespace RobotAI
 				{
 					if (foundPlayer == true) {
 						moveUpdate();
-						if(isPunching == true){
+						if(isDead == false){
 							periodicTaunt();
 						}
 					} else {
 						movePathUpdate();
 					}
 								
+				}
+				void setDead(bool d){
+					isDead = d;
 				}
 		}
 }

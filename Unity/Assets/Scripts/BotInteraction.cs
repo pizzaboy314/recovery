@@ -7,6 +7,9 @@ public class BotInteraction : MonoBehaviour {
 	private float damage = 0f;
 	Animator rt;
 
+	public GameObject chest;
+	public AudioClip[] hitSounds = new AudioClip[10];
+
 	// Use this for initialization
 	void Start () {
 		rt = GetComponent<Animator>();
@@ -19,9 +22,14 @@ public class BotInteraction : MonoBehaviour {
 
 	public void Shot(){
 		//TODO implement HP, prevent further interation in punching
-		if (currHealth < 0f)
+		if (currHealth <= 0f) {
+			SendMessage ("setDead", true);
 			rt.enabled = false;
-		else --currHealth;
+		} else {
+			damage++;
+			currHealth = maxHealth - damage;
+			playHitSound();
+		}
 	}
 
 	private IEnumerator resetStumble(){
@@ -45,8 +53,15 @@ public class BotInteraction : MonoBehaviour {
 			damage = maxHealth;
 			currHealth = maxHealth - damage;
 		}
-		if (currHealth <= 0f){
+		if (currHealth <= 0f) {
 			rt.enabled = false;
+			SendMessage ("setDead", true);
+		} else {
+			playHitSound();
 		}
+	}
+	public void playHitSound(){
+		chest.audio.clip = hitSounds[(int)damage-1];
+		chest.audio.Play();
 	}
 }

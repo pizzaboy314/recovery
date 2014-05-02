@@ -13,7 +13,7 @@ public class HandleInteraction : MonoBehaviour {
 	private float damage = 0f;
 	private bool lightPulsing;
 
-	public AudioClip[] hitSounds;
+	public AudioClip[] hitSounds = new AudioClip[10];
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +33,7 @@ public class HandleInteraction : MonoBehaviour {
 			spotlight.SendMessage("setPulsing", true);
 		}
 		damage++;
+		playHitSound ();
 		if(damage >= maxHealth){
 			SendMessage ("toggleGUI");
 			killCam(from);
@@ -69,11 +70,18 @@ public class HandleInteraction : MonoBehaviour {
 			currHealth = maxHealth - damage;
 		}
 
-		if(damage >= maxHealth){
+		if (damage >= maxHealth) {
 			SendMessage ("toggleGUI");
-			killCam(gameObject.transform.position);
-			spotlight.SendMessage("resetPulsation");
-			reset();
+			killCam (gameObject.transform.position);
+			spotlight.SendMessage ("resetPulsation");
+			reset ();
+		} else {
+			playHitSound();
 		}
+	}
+	public void playHitSound(){
+		Debug.Log (damage);
+		mainCam.audio.clip = hitSounds[(int)damage-1];
+		mainCam.audio.Play();
 	}
 }

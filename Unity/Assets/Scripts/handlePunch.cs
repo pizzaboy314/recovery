@@ -3,6 +3,8 @@ using System.Collections;
 
 public class handlePunch : MonoBehaviour {
 	public GameObject player;
+	public GameObject rightHand;
+	public AudioClip[] punches;
 
 	// Use this for initialization
 	void Start () {
@@ -16,5 +18,8 @@ public class handlePunch : MonoBehaviour {
 
 	public void GetHit(){
 		player.SendMessage("getHit", this.transform.position);//TODO
+		int n = Random.Range(0,punches.Length);
+		rightHand.audio.clip = punches[n];
+		rightHand.audio.Play();
 	}
 }
