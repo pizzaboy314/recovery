@@ -10,6 +10,7 @@ public class TheDisableController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Physics.IgnoreLayerCollision(8, 8, true);
 		player = GameObject.Find("Player").transform;
 		numBots = transform.childCount;
 	}
