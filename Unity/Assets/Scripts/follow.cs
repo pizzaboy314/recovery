@@ -177,6 +177,8 @@ namespace RobotAI
 									int currentBaseState = ani.GetCurrentAnimatorStateInfo(0).nameHash;
 									if (currentBaseState == atkHash1 || currentBaseState == atkHash2){
 										ani.SetBool ("Lifting", false);
+										if (isPunching)
+											transform.LookAt(pl.transform);
 										StartCoroutine(waitForNextPunch());
 									}
 								}
