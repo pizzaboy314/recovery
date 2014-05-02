@@ -5,6 +5,10 @@ namespace RobotAI
 {
 		public class follow : MonoBehaviour
 		{
+				public Transform leftHand = null;
+				public bool punchExclusively = true;
+				private GameObject pl = null;
+
 				public GameObject toFollow = null;
 				public Vector3 toFollowPath;
 				public float maxPathSpeedFactor = 0.6f;
@@ -30,6 +34,8 @@ namespace RobotAI
 				// Use this for initialization
 				void Start ()
 				{
+						pl = GameObject.Find ("Player");
+						leftHand = transform.Find("metarig/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L");
 						tauntCounter = 5f;
 						isPunching = false;
 						ani = GetComponent<Animator> ();
@@ -95,7 +101,14 @@ namespace RobotAI
 
 				private IEnumerator waitForNextPunch(){
 					isPunching = true;
+					if (!punchExclusively)
+						pl.transform.parent = leftHand;
 					yield return new WaitForSeconds(timeBetweenPunch);
+					if (!punchExclusively){
+						pl.transform.parent = null;
+						Vector3 tmpV = (pl.transform.position - transform.position).normalized * 10;
+						pl.rigidbody.velocity = new Vector3(tmpV.x, 0.0f, tmpV.z);
+					}
 					isPunching = false;
 				}
 
@@ -143,13 +156,25 @@ namespace RobotAI
 									ani.SetFloat ("Forward", distanceFactor * maxFollowSpeedFactor);
 					} else {
 							ani.SetFloat ("Forward", 0);
-							if (!isPunching && s * 10.1f > disToPlayer){//TODO tweek distancce
-								ani.SetBool ("Punching", true);
-								int atkHash = Animator.StringToHash("Base.Punch");
-								int currentBaseState = ani.GetCurrentAnimatorStateInfo(0).nameHash;
-								if (currentBaseState == atkHash){
-									ani.SetBool ("Punching", false);
-									StartCoroutine(waitForNextPunch());
+							if (!isPunching && s * 10.1f <= disToPlayer){//TODO tweek distancce
+								if (punchExclusively){
+									ani.SetBool ("Punching", true);
+									int atkHash = Animator.StringToHash("Base.Punch");
+									int currentBaseState = ani.GetCurrentAnimatorStateInfo(0).nameHash;
+									if (currentBaseState == atkHash){
+										ani.SetBool ("Punching", false);
+										StartCoroutine(waitForNextPunch());
+									}
+								}
+								else {
+									ani.SetBool ("Lifting", true);
+									pl.transform.LookAt (transform.position);
+									int atkHash = Animator.StringToHash("Base.lift");
+									int currentBaseState = ani.GetCurrentAnimatorStateInfo(0).nameHash;
+									if (currentBaseState == atkHash){
+										ani.SetBool ("Lifting", false);
+										StartCoroutine(waitForNextPunch());
+									}
 								}
 							}
 					}

@@ -707,8 +707,8 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110222603}
   m_DstState: {fileID: 110221770}
-  m_TransitionDuration: .219136447
-  m_TransitionOffset: .0490707122
+  m_TransitionDuration: .114665098
+  m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: Punching
@@ -930,7 +930,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: toss
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400008, guid: 362cf225aae0d7a4ebba8739afe9a9c4, type: 3}
