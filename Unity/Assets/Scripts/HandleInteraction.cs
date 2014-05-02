@@ -80,7 +80,6 @@ public class HandleInteraction : MonoBehaviour {
 		}
 	}
 	public void playHitSound(){
-		Debug.Log (damage);
 		mainCam.audio.clip = hitSounds[(int)damage-1];
 		mainCam.audio.Play();
 	}

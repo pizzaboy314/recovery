@@ -13,7 +13,13 @@ public class MoveGrates : MonoBehaviour {
 	void Start () {
 		startPos = transform.position;
 	}
-	
+
+	void Update() {
+		if(Input.GetButton("Quit")){
+			Application.Quit();
+		}
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		isMoving = Input.GetButton("Grates");
