@@ -14,6 +14,8 @@ public class safetyNet : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter(Collider col){
-		player.SendMessage("reset");
+		if(col.gameObject == player){
+			player.SendMessage("reset");
+		}
 	}
 }
