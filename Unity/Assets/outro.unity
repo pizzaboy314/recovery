@@ -1012,11 +1012,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caccec5907b82b94f8bfdf483a73362e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 12
+  runSpeed: 7
   strafeSpeed: 4
   jumpPower: 4
   walkByDefault: 1
-  walkSpeed: 6
+  walkSpeed: 5
   advanced:
     gravityMultiplier: 1
     zeroFrictionMaterial: {fileID: 0}
@@ -3917,6 +3917,14 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 886761fdb5c2e3247b93e3c503c45590, type: 2}
+      propertyPath: runSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 886761fdb5c2e3247b93e3c503c45590, type: 2}
+      propertyPath: walkSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: 886761fdb5c2e3247b93e3c503c45590, type: 2}
     - {fileID: 11400010, guid: 886761fdb5c2e3247b93e3c503c45590, type: 2}
@@ -5023,6 +5031,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipToPlay: {fileID: 8300000, guid: 1028aa8633a5eb240ac3ab3e90ebb799, type: 3}
+  toDestroy: {fileID: 0}
+  playOnce: 0
 --- !u!1 &1543816123
 GameObject:
   m_ObjectHideFlags: 0
