@@ -1,0 +1,56 @@
+#VRML V1.0 ascii
+WWWInline {
+name "Debris-04.wrl"
+bboxSize 0.000000 0.000000 0.000000
+bboxCenter 0.000000 0.000000 0.000000
+}
+WWWInline {
+name "Debris-05.wrl"
+bboxSize 0.000000 0.000000 0.000000
+bboxCenter 0.000000 0.000000 0.000000
+}
+WWWInline {
+name "Debris-02.wrl"
+bboxSize 0.000000 0.000000 0.000000
+bboxCenter 0.000000 0.000000 0.000000
+}
+WWWInline {
+name "Debris-01.wrl"
+bboxSize 0.000000 0.000000 0.000000
+bboxCenter 0.000000 0.000000 0.000000
+}
+WWWInline {
+name "Debris-04-1.wrl"
+bboxSize 0.000000 0.000000 0.000000
+bboxCenter 0.000000 0.000000 0.000000
+}
+WWWInline {
+name "Debris-03.wrl"
+bboxSize 0.000000 0.000000 0.000000
+bboxCenter 0.000000 0.000000 0.000000
+}
+WWWInline {
+name "Debris-02-1.wrl"
+bboxSize 0.000000 0.000000 0.000000
+bboxCenter 0.000000 0.000000 0.000000
+}
+WWWInline {
+name "Debris-01-1.wrl"
+bboxSize 0.000000 0.000000 0.000000
+bboxCenter 0.000000 0.000000 0.000000
+}
+WWWInline {
+name "Debris-03-1.wrl"
+bboxSize 0.000000 0.000000 0.000000
+bboxCenter 0.000000 0.000000 0.000000
+}
+WWWInline {
+name "Debris-02-2.wrl"
+bboxSize 0.000000 0.000000 0.000000
+bboxCenter 0.000000 0.000000 0.000000
+}
+WWWInline {
+name "Debris-02-3.wrl"
+bboxSize 0.000000 0.000000 0.000000
+bboxCenter 0.000000 0.000000 0.000000
+}
