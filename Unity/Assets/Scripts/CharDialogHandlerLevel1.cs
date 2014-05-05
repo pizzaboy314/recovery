@@ -14,7 +14,7 @@ public class CharDialogHandlerLevel1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		periodicQuote();
+
 	}
 
 	void playClip(AudioClip clip){
