@@ -7,7 +7,7 @@ Genre: FPS Survival Horror
 
 Roles
 ======
-Bryan Spahr: 		team lead, character voices, music, coding, texturing, modeling, lighting, all level compilation
+Bryan Spahr: 		team lead, character voices, music, coding, texturing, modeling, level design, lighting, all level compilation
 
 Shanon Mathai: 		coding, scripting, modeling, animations, bots, AI
 
