@@ -23,7 +23,7 @@ public class PlayerHealthBarScript : MonoBehaviour {
 	private string healthtext = "HEALTH";
 	private string healthval = "";
 	private string ammotext = "GRENADES";
-	private string ammoval = "";
+	private string detammo = "";
 	
 	void OnGUI()
 	{
@@ -50,9 +50,9 @@ public class PlayerHealthBarScript : MonoBehaviour {
 		GUI.Label (new Rect(pos.x, pos.y-20, size.x, size.y), healthtext);
 		GUI.Label (new Rect(pos.x+5, pos.y+15, size.x, size.y), healthval);
 
-		ammoval = (showGUI == true) ? "" + FP_Shooting.numDets : "";
+		detammo = (showGUI == true) ? "" + FP_Shooting.numDets : "";
 		GUI.Label (new Rect(2*(Screen.width/3)-60, pos.y-20, size.x, size.y), ammotext);
-		GUI.Label (new Rect(2*(Screen.width/3)-60, pos.y+15, size.x, size.y), ammoval);
+		GUI.Label (new Rect(2*(Screen.width/3)-60, pos.y+15, size.x, size.y), detammo);
 	}
 	
 	void Update()
