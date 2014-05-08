@@ -22,8 +22,10 @@ public class PlayerHealthBarScript : MonoBehaviour {
 	private bool showGUI = true;
 	private string healthtext = "HEALTH";
 	private string healthval = "";
-	private string ammotext = "GRENADES";
+	private string dettext = "GRENADES";
 	private string detammo = "";
+	private string lasertext = "AMMO";
+	private string laserammo = "";
 	
 	void OnGUI()
 	{
@@ -51,8 +53,12 @@ public class PlayerHealthBarScript : MonoBehaviour {
 		GUI.Label (new Rect(pos.x+5, pos.y+15, size.x, size.y), healthval);
 
 		detammo = (showGUI == true) ? "" + FP_Shooting.numDets : "";
-		GUI.Label (new Rect(2*(Screen.width/3)-60, pos.y-20, size.x, size.y), ammotext);
+		GUI.Label (new Rect(2*(Screen.width/3)-60, pos.y-20, size.x, size.y), dettext);
 		GUI.Label (new Rect(2*(Screen.width/3)-60, pos.y+15, size.x, size.y), detammo);
+
+		laserammo = (showGUI == true) ? "" + FP_Shooting.numLaser : "";
+		GUI.Label (new Rect(2*(Screen.width/3)-160, pos.y-20, size.x, size.y), lasertext);
+		GUI.Label (new Rect(2*(Screen.width/3)-160, pos.y+15, size.x, size.y), laserammo);
 	}
 	
 	void Update()
@@ -69,7 +75,8 @@ public class PlayerHealthBarScript : MonoBehaviour {
 			emptyTex = null;
 			fullTex = null;
 			healthtext = "";
-			ammotext = "";
+			dettext = "";
+			lasertext = "";
 		} else {
 			showGUI = true;
 			emptyTex = emptyTexTMP;
@@ -77,7 +84,8 @@ public class PlayerHealthBarScript : MonoBehaviour {
 			emptyTexTMP = null;
 			fullTexTMP = null;
 			healthtext = "HEALTH";
-			ammotext = "GRENADES";
+			dettext = "GRENADES";
+			lasertext = "AMMO";
 		}
 	}
 

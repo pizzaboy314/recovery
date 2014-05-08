@@ -4,7 +4,8 @@ using System.Collections;
 
 public class AmmoPickup : MonoBehaviour {
 
-	public float detsToAdd = 2f;
+	public float detsToAdd = 1f;
+	public float laserToAdd = 10f;
 	private GameObject player;
 
 	// Use this for initialization
@@ -18,9 +19,10 @@ public class AmmoPickup : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-		if (FP_Shooting.numDets + detsToAdd <= FP_Shooting.maxDets) {
+		if (FP_Shooting.numDets + detsToAdd <= FP_Shooting.maxDets || FP_Shooting.numLaser + laserToAdd <= FP_Shooting.maxLaser) {
 			audio.Play();
 		}
 		player.SendMessage ("addDets", detsToAdd);
+		player.SendMessage ("addLaser", laserToAdd);
 	}
 }

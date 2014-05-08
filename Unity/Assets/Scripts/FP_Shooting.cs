@@ -7,6 +7,8 @@ namespace shooting {
 		public GameObject thermal_det;
 		public static float maxDets = 5f;
 		public static float numDets = 5f;
+		public static float maxLaser = 50f;
+		public static float numLaser = 50f;
 		public float detImpulse;
 		
 		public GameObject debrisPrefab;
@@ -51,37 +53,40 @@ namespace shooting {
 			cooldownRemaining -= Time.deltaTime;
 			
 			if(Input.GetButtonDown("Fire1") && cooldownRemaining <= 0){
-				currWeapon.audio.Play();
-				
-				Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-				RaycastHit hitInfo;
-				
-				Vector3 gunTip = currWeapon.transform.Find("laserSpawn").position;
-				start = gunTip;
-				
-				laser.enabled = true;
-				animTailCounter = 0;
-				animHeadCounter = 0;
-				
-				if(Physics.Raycast(ray, out hitInfo, raycastRange)){
-					if(hitInfo.collider.tag == "ThermalDet"){
-						thermal_det script = hitInfo.collider.GetComponent<thermal_det>();
-						script.Explode();
-					} else if(hitInfo.collider.tag == "Enemy"){
-						GameObject en = hitInfo.collider.gameObject;
-						en.SendMessageUpwards("Shot");
-					}
+				if(numLaser > 0){
+					currWeapon.audio.Play();
 					
-					Vector3 hitPoint = hitInfo.point;
-					if(debrisPrefab != null){
-						Instantiate(debrisPrefab, hitPoint, Quaternion.identity);
-					}
-					end = hitPoint;
+					Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+					RaycastHit hitInfo;
 					
-				} else {
-					end = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 12.0f));
+					Vector3 gunTip = currWeapon.transform.Find("laserSpawn").position;
+					start = gunTip;
+					
+					laser.enabled = true;
+					animTailCounter = 0;
+					animHeadCounter = 0;
+					
+					if(Physics.Raycast(ray, out hitInfo, raycastRange)){
+						if(hitInfo.collider.tag == "ThermalDet"){
+							thermal_det script = hitInfo.collider.GetComponent<thermal_det>();
+							script.Explode();
+						} else if(hitInfo.collider.tag == "Enemy"){
+							GameObject en = hitInfo.collider.gameObject;
+							en.SendMessageUpwards("Shot");
+						}
+						
+						Vector3 hitPoint = hitInfo.point;
+						if(debrisPrefab != null){
+							Instantiate(debrisPrefab, hitPoint, Quaternion.identity);
+						}
+						end = hitPoint;
+						
+					} else {
+						end = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 12.0f));
+					}
+					animDist = Vector3.Distance(start, end);
+					numLaser--;
 				}
-				animDist = Vector3.Distance(start, end);
 			}
 			
 			if (laser.enabled == true) {
@@ -122,6 +127,11 @@ namespace shooting {
 		public void addDets(float n){
 			if (numDets + n <= maxDets) {
 				numDets += n;
+			}
+		}
+		public void addLaser(float n){
+			if (numLaser + n <= maxLaser) {
+				numLaser += n;
 			}
 		}
 	}
